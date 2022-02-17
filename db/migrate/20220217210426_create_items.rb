@@ -5,8 +5,8 @@ class CreateItems < ActiveRecord::Migration[6.1]
       t.float :price
       t.string :category
       t.text :description
-      t.string :item_url
-      t.string :image_url
+      t.text :item_url
+      t.text :image_url
       t.boolean :purchased
       t.references :user, null: false, foreign_key: true
 
