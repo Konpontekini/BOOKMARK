@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
-  validates :category, :item_url, presence: true
+  belongs_to :category
+  validates  :item_url, presence: true
   validates :item_url, uniqueness: true
 end
