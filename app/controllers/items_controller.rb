@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :find_item, only: [:category]
+
   def index
     @items = Item.all
   end
