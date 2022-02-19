@@ -1,1 +1,7 @@
 // Specific CSS for your home-page
+.container {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://res.cloudinary.com/dajifvnn5/image/upload/v1645110270/Shopping_screen_mxaypo.jpg");
+    background-size: cover;
+    background-position: bottom;
+    object-fit: contain;
+  }
