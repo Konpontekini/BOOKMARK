@@ -1,14 +1,19 @@
 // Specific CSS for your home-page
 
 .container {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://res.cloudinary.com/dajifvnn5/image/upload/v1645110270/Shopping_screen_mxaypo.jpg");
-    background-size: cover;
+    background-color: ghostwhite;
     background-position: bottom;
     object-fit: contain;
-  }
 
-.btn-flat {
-  color: black;
+  h1 {
+    color: black;
+    font-size: 50px;
+  }
+}
+
+
+.btn-flat-home {
+  background-color: black;
   padding: 10px 25px;
   border-radius: 0px;
   background: #A36959;
@@ -28,10 +33,10 @@ h1 {
     font-family: "Aktiv Grotesk", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 
-  p {
-    color: black;
-    font-size: 20px;
-  }
+p {
+  color: black;
+  font-size: 20px;
+}
 
 @media (max-width: 960px) {
   /* For a screen < 960px, this CSS will be read */
