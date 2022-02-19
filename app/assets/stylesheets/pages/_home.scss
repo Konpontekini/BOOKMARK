@@ -1,7 +1,11 @@
 // Specific CSS for your home-page
 
-
-// This is for the GET STARTED button
+.container {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://res.cloudinary.com/dajifvnn5/image/upload/v1645110270/Shopping_screen_mxaypo.jpg");
+    background-size: cover;
+    background-position: bottom;
+    object-fit: contain;
+  }
 
 .btn-flat {
   color: black;
@@ -17,7 +21,6 @@
   }
 }
 
-
 h1 {
     color: black;
     font-size: 50px;
@@ -29,7 +32,6 @@ h1 {
     color: black;
     font-size: 20px;
   }
-
 
 @media (max-width: 960px) {
   /* For a screen < 960px, this CSS will be read */
