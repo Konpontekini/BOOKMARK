@@ -20,11 +20,17 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+import {AnimateAsynch, createImageSlider} from '../custom.js';
+import { QUERY } from "webpack/lib/ModuleFilenameHelpers"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  // if (document.querySelector('.homepage-caroussel')) {
+  //   createImageSlider()
+  //   AnimateAsynch()
+  // }
   // Call your functions here, e.g:
   // initSelect2();
 });
