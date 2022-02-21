@@ -1,14 +1,29 @@
 // Specific CSS for your home-page
 
-.container {
-    background-color: ghostwhite;
+.home-container {
+    background-color: white;
     background-position: bottom;
     object-fit: contain;
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+    padding: 50px 50px 50px 50px;
 
   h1 {
     color: black;
-    font-size: 50px;
+    font-size: 30px;
+    font-weight: bolder;
+    font-family: "Aktiv Grotesk", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
+
+  p {
+    color: black;
+    font-size: 20px;
+  }
+}
+
+.tagline {
+  padding-right: 50px;
 }
 
 // This is the get started button
@@ -27,46 +42,13 @@
   }
 }
 
-h1 {
-    color: black;
-    font-size: 50px;
-    font-weight: bolder;
-    font-family: "Aktiv Grotesk", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
-
-p {
-  color: black;
-  font-size: 20px;
-}
-
-@media (max-width: 960px) {
-  /* For a screen < 960px, this CSS will be read */
-  .container {
-    width: 700px;
-  }
-}
-
-@media (max-width: 720px) {
-  /* For a screen < 720px, this CSS will be read */
-  .container {
-    width: 500px;
-  }
-}
-
-@media (max-width: 540px) {
-  /* For a screen < 540px, this CSS will be read */
-  .container {
-    width: 300px;
-  }
-}
-
 // Caroussel for homepage styling
 
 .slider {
   position: relative;
-  width: 500px;
-  // margin: 0 20px;
+  width: 650px;
   margin-bottom: 25px;
+  overflow: hidden;
 }
 
 img {
@@ -78,8 +60,6 @@ box-sizing: border-box;
 }
 
 .slides-wrapper {
-  // width: 500px;
-  // height: 280px;
   padding-top: calc((9/16) * 100%);
   background: #222;
   position: relative;
@@ -112,9 +92,8 @@ box-sizing: border-box;
   left: 0;
   width: 100%;
   height: 15px;
-  background: #eee;
+  // background: #eee;
 }
-
 
 .slide-indicators button {
 width: 6px;
@@ -173,4 +152,32 @@ display: block;
 .prev-button:active
 .next-button:active {
   background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1200px) {
+  /* For a screen < 1200px, this CSS will be read */
+  .container {
+    width: 900px;
+  }
+}
+
+@media (max-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+  .container {
+    width: 500px;
+  }
+}
+
+@media (max-width: 540px) {
+  /* For a screen < 540px, this CSS will be read */
+  .container {
+    width: 300px;
+  }
 }
