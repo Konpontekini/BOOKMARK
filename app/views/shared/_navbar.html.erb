@@ -22,6 +22,7 @@
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://res.cloudinary.com/dajifvnn5/image/upload/v1645110269/Computer_comparison_bjpxfu.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%# <%= link_to current_user.first_name, destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
@@ -31,7 +32,7 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Login / Sign up", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>

@@ -97,10 +97,10 @@ function createImageSlider(
   return slider;
 }
 
-document.body.appendChild(createImageSlider([
-  'https://images8.alphacoders.com/111/1114049.jpg',
-  'https://i.pinimg.com/originals/48/42/9f/48429f10ab5d153eaefdd696bd62549d.jpg',
-  'https://images.wallpaperscraft.com/image/sea_ocean_waves_113778_3840x2160.jpg',
-  'https://c4.wallpaperflare.com/wallpaper/294/551/634/outside-orbit-wallpaper-preview.jpg',
-  'https://c4.wallpaperflare.com/wallpaper/899/936/977/3-316-16-9-aspect-ratio-s-sfw-wallpaper-preview.jpg'
+document.querySelector(".homepage-caroussel").appendChild(createImageSlider([
+  'https://res.cloudinary.com/dajifvnn5/image/upload/v1645110270/Christmas_Cart_jimfgj.jpg',
+  'https://res.cloudinary.com/dajifvnn5/image/upload/v1645110270/Shopping_screen_mxaypo.jpg',
+  'https://res.cloudinary.com/dajifvnn5/image/upload/v1645110270/Shopping_paper_list_iazl1e.jpg',
+  'https://res.cloudinary.com/dajifvnn5/image/upload/v1645110268/Chanel_lx8idp.jpg',
+  'https://res.cloudinary.com/dajifvnn5/image/upload/v1645311872/tamanna-rumee-eD1RNYzzUxc-unsplash_c5ovzh.jpg'
 ]))
