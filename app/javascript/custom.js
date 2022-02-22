@@ -98,9 +98,9 @@ function createImageSlider(
 }
 
 document.querySelector(".homepage-caroussel").appendChild(createImageSlider([
-  'https://res.cloudinary.com/dajifvnn5/image/upload/v1645110270/Christmas_Cart_jimfgj.jpg',
+  'https://res.cloudinary.com/dajifvnn5/image/upload/v1645550508/onesave-day-tWHuM6qqkgE-unsplash_gi92ri.jpg',
   'https://res.cloudinary.com/dajifvnn5/image/upload/v1645110270/Shopping_screen_mxaypo.jpg',
   'https://res.cloudinary.com/dajifvnn5/image/upload/v1645110270/Shopping_paper_list_iazl1e.jpg',
   'https://res.cloudinary.com/dajifvnn5/image/upload/v1645110268/Chanel_lx8idp.jpg',
-  'https://res.cloudinary.com/dajifvnn5/image/upload/v1645311872/tamanna-rumee-eD1RNYzzUxc-unsplash_c5ovzh.jpg'
+  'https://res.cloudinary.com/dajifvnn5/image/upload/v1645549931/nina-mercado-_qN6tmGjmtg-unsplash_bwrkjw.jpg'
 ]))

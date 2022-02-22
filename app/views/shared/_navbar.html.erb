@@ -20,10 +20,11 @@
         <li class="nav-item">
           <%# <%= link_to "Add Item", new_item_path(@item), class: "nav-link" %>
         </li>
+
         <li class="nav-item dropdown">
-          <%= image_tag "https://res.cloudinary.com/dajifvnn5/image/upload/v1645110269/Computer_comparison_bjpxfu.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <%# <%= link_to current_user.first_name, destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <%= image_tag "https://res.cloudinary.com/dajifvnn5/image/upload/o_25/v1645471036/user_icon_jmbfxv.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= current_user.first_name %> <%= current_user.last_name %>
             <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

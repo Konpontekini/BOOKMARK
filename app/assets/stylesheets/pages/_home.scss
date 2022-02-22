@@ -1,43 +1,77 @@
 // Specific CSS for your home-page
 
 .home-container {
-    background-color: white;
+    // background-color: #eaeeed;
+    // background-color: #1A1A1A;
+    // background-color: #EAE9E6;
+    background-color: #F9F4ED;
     background-position: bottom;
     object-fit: contain;
     display: flex;
     justify-content: space-between;
     height: 500px;
-    padding: 50px 50px 50px 50px;
+    padding-right: 120px;
+    // padding: 70px 100px 100px 100px;
 
   h1 {
-    color: black;
-    font-size: 30px;
-    font-weight: bolder;
-    font-family: "Aktiv Grotesk", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #9F8972;
+    // color:#eaeeed;
+    font-size: 32px;
+    // font-weight: bold;
+    font-family: UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  h5 {
+    color: #9F8972;
+    // color: #eaeeed;
+    font-size: 20px;
+    // font-weight: bold;
+    font-family: UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 
   p {
-    color: black;
-    font-size: 20px;
+    color: #9F8972;
+    // color: #eaeeed;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
 }
 
 .tagline {
   padding-right: 50px;
+  background-color: #1A1A1A;
+  // background-color: #7E928D;
+  margin-right: 150px;
+
+  .text-content {
+    // position: relative;
+    margin-top: 70px;
+    margin-left: 50px;
+  }
+}
+
+.homepage-caroussel {
+  padding-top: 80px;
 }
 
 // This is the get started button
 
-.btn-flat-home {
-  background-color: black;
-  padding: 10px 25px;
-  border-radius: 0px;
-  background: #A36959;
-  transition: background 0.3s ease;
+.btn-flat {
+  border-radius: 20px;
   font-weight: bolder;
-
+  padding-left: 120px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  // background: #D1CBC7;
+  background-color: #CEB8A4;
+  // background-color: #CB9E87;
+  // background: #C29488;
+  transition: background 0.3s ease;
+  color: white;
+  
   &:hover {
-    background:#374E4A ;
+    background: #A95C32 ;
     color: white;
   }
 }
@@ -46,7 +80,7 @@
 
 .slider {
   position: relative;
-  width: 650px;
+  width: 550px;
   margin-bottom: 25px;
   overflow: hidden;
 }
