@@ -27,10 +27,10 @@ import { QUERY } from "webpack/lib/ModuleFilenameHelpers"
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  // if (document.querySelector('.homepage-caroussel')) {
-  //   createImageSlider()
-  //   AnimateAsynch()
-  // }
+  if (document.querySelector('.homepage-caroussel')) {
+    createImageSlider();
+    AnimateAsynch();
+  }
   // Call your functions here, e.g:
   // initSelect2();
 });
