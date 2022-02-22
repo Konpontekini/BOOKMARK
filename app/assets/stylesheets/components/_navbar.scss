@@ -1,5 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
+  // align-items: center;
   background: white;
 }
 
@@ -8,5 +9,22 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 30px;
+  border-radius: 60%;
+}
+
+.nav-item {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.dropdown-menu {
+  text-align: center;
+  white-space: nowrap;
 }
