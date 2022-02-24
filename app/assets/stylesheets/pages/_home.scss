@@ -4,65 +4,93 @@
     // background-color: #eaeeed;
     // background-color: #1A1A1A;
     // background-color: #EAE9E6;
-    background-color: #F9F4ED;
-    background-position: bottom;
+    background-color: $light-pink;
     object-fit: contain;
     display: flex;
     justify-content: space-between;
     height: 500px;
-    padding-right: 150px;
+    padding-right: 120px;
     // padding: 70px 100px 100px 100px;
 
   h1 {
-    color: #9F8972;
+    color: $dark-pink;
     // color:#eaeeed;
-    font-size: 32px;
-    // font-weight: bold;
-    font-family: UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    font-family: 'Cormorant', serif;
+    font-weight: bold;
   }
 
   h5 {
-    color: #9F8972;
+    color: $dark-pink;
     // color: #eaeeed;
     font-size: 20px;
-    // font-weight: bold;
-    font-family: UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Cormorant', serif;
+    font-weight: bold;
+    font-style: italic;
   }
 
   p {
-    color: #9F8972;
+    color: $dark-pink;
     // color: #eaeeed;
-    font-size: 16px;
-    font-weight: normal;
-    font-family: UberMoveText, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Cormorant', serif;
   }
 }
 
 .tagline {
   padding-right: 0px;
-  background-color: #1A1A1A;
-  // background-color: #7E928D;
-  margin-right: 20px;
-  width: 400px;
-  max-width: 400px;
-  min-width: 400px;
+  background-color: $pale-grey;
+  // opacity: 0.9;
+  margin-right: 10px;
+  margin-left: 20px;
+  width: 250px;
+  max-width: 250px;
+  min-width: 250px;
+  // width: 400px;
+  // max-width: 400px;
+  // min-width: 400px;
 
   .text-content {
-    // position: relative;
-    margin-top: 70px;
-    margin-left: 50px;
+    background-color: $charcol;
+    border: solid 2px $charcol;
+    // border-radius: 15px;
+    margin-top: 30px;
+    margin-left: 130px;
+    margin-right: -180px;
+    padding: 20px 20px 20px 20px;
+  }
+
+  .start {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 140px;
+    margin-right: -180px;
+
+    p {
+      color: $charcol;
+      font-size: 28px;
+      font-family: 'Dancing Script', cursive;
+    }
   }
 }
 
 #carouselExampleIndicators {
-  padding-top: 50px;
+  padding-top: 60px;
+  // margin-top: 50px;
+  margin-bottom: 60px;
+  // background-color: $pale-grey;
 }
 
 .d-block {
   width: 600px;
-  height: 400px;
+  height: 380px;
   max-width: 600px;
-vertical-align: middle;
+  vertical-align: middle;
+  // padding-top: 0px;
+  // margin-left: 70px;
 }
 
 .carousel{
@@ -71,22 +99,21 @@ vertical-align: middle;
 
 // This is the get started button
 
-.btn-flat {
-  border-radius: 20px;
+.btn-start {
+  border: solid 1px $charcol;
+  padding: 10px 25px;
+  // background-color: $brown;
+  // transition: background 0.3s ease;
+  color: $charcol;
+  font-size: 16px;
   font-weight: bolder;
-  padding-left: 120px;
-  padding: 8px 10px;
-  border-radius: 4px;
-  // background: #D1CBC7;
-  background-color: #CEB8A4;
-  // background-color: #CB9E87;
-  // background: #C29488;
-  transition: background 0.3s ease;
-  color: white;
+  font-family: 'Cormorant', serif;
 
   &:hover {
-    background: #A95C32 ;
-    color: white;
+    background-color: $charcol;
+    // border: solid 1px $charcol;
+    color: $mid-pink;
+    // border: none;
   }
 }
 
