@@ -12,10 +12,13 @@ class ItemsController < ApplicationController
   def show
   end
 
+  # def category
+  # end
+
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-    @item.category = @category
+    # @item.category = @category
     @item.save
     redirect_to items_path
   end
