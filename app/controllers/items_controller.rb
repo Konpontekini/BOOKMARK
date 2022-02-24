@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :find_item, only: [:category]
+  before_action :find_item, only: [:update, :edit, :show, :destroy, :category]
 
   def index
     @items = Item.all
@@ -9,11 +9,15 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
+  def show
+  end
+
   def create
     @item = Item.new(item_params)
     @item.user = current_user
+    @item.category = @category
     @item.save
-    redirect_to item_path(@item)
+    redirect_to items_path
   end
 
   def edit
@@ -22,6 +26,7 @@ class ItemsController < ApplicationController
   def update
     if @item.update(item_params)
       redirect_to item_path(@item)
+      # recirect_to items_path
     else
       render :index
     end

@@ -1,6 +1,8 @@
 <div class="container-new">
   <div class="form-item-new">
     <h1>Add item</h1>
-      <%= render "form", item: @item %>
+      <%= render "form", item: @item, category: @category %>
   </div>
 </div>
+
+<%= link_to "Back to item list", items_path %>
