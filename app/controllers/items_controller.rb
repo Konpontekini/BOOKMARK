@@ -12,13 +12,9 @@ class ItemsController < ApplicationController
   def show
   end
 
-  # def category
-  # end
-
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-    # @item.category = @category
     @item.save
     redirect_to items_path
   end
@@ -51,6 +47,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:category, :item_url)
+    params.require(:item).permit(:category_id, :item_url)
   end
 end
