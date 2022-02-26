@@ -19,11 +19,8 @@ ActiveStorage.start()
 // ----------------------------------------------------
 
 // External imports
-// uncomment this line
 import "bootstrap";
 // import {AnimateAsynch, createImageSlider} from '../custom.js';
-
-// uncomment this line
 import { QUERY } from "webpack/lib/ModuleFilenameHelpers"
 
 // Internal imports, e.g:
