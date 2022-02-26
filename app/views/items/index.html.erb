@@ -1,6 +1,18 @@
 <%= link_to "New Categories", new_category_path, class:"btn btn-primary" %>
 
 <div class="top-container">
+  <%# // search form %>
+  <div class="col-sm-8 pt-4 pb-4">
+  <%= form_tag items_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a Bookmarked Item"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+
   <div class="row items">
     <h2>All of your current Bookmarks.</h2>
   </div>
