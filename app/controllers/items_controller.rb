@@ -2,12 +2,7 @@ class ItemsController < ApplicationController
   before_action :find_item, only: [:update, :edit, :show, :destroy, :category]
 
   def index
-    if params[:query].present?
-      sql_query = "name ILIKE :query OR description ILIKE :query"
-      @items = Item.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @items = Item.all
-    end
+    @items = Item.all
   end
 
   def new
