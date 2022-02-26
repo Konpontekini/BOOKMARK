@@ -20,12 +20,15 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-    @item.category = @category
     @item.save
     redirect_to items_path
   end
 
   def edit
+  end
+
+  def purchased
+    @item.purchased? == true
   end
 
   def update
@@ -49,6 +52,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:category, :item_url)
+    params.require(:item).permit(:category_id, :item_url)
   end
 end
