@@ -1,8 +1,9 @@
-<%= link_to "New Categories", new_category_path, class:"btn btn-primary" %>
+<%# <%= link_to "New Categories", new_category_path, class:"btn btn-primary" %>
+
 
 <div class="top-container">
-  <div class="row items">
-    <h2>All of your current Bookmarks.</h2>
+  <div class="row items" >
+    <h2>Bookmarks.</h2>
   </div>
 
 <div class="main-container">
@@ -17,7 +18,7 @@
           </div>
 
           <div class="item-description-price">
-            <i class="description">Description:</i><span><%= item.description %></span>
+            <i class="description">Description: </i><span><%= item.description %></span>
             <i class="price">Price: £</i><%= item.price %>
           </div>
 

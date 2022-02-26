@@ -20,6 +20,13 @@ user = User.create!(
     password: 'password'
   )
 
+user = User.create!(
+    first_name: 'frazer',
+    last_name: 'gavin',
+    email: 'frazer@gmail.com',
+    password: 'password117'
+)
+
 puts "user created!"
 
 puts "Creating categories..."
