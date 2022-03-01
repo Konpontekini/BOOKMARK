@@ -1,8 +1,13 @@
+require 'pry'
 class ItemsController < ApplicationController
   before_action :find_item, only: [:update, :edit, :show, :destroy, :category]
 
   def index
-    @items = Item.all
+    if params[:sort].present?
+      @items = Item.all.order(params[:sort])
+    else
+      @items = Item.all
+    end
   end
 
   def new
@@ -47,6 +52,15 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:category_id, :item_url)
+    params.require(:item).permit(:category_id, :item_url, :sort, :name, :created_at, :price)
   end
 end
+
+  # def index
+  #   if params[:sort].present?
+  #   binding.pry
+  #     @items = Item.all.order(:name)
+  #   else
+  #     @items = Item.all
+  #   end
+  # end
