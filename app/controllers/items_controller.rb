@@ -1,4 +1,6 @@
 require 'pry'
+require 'open-uri'
+require 'nokogiri'
 class ItemsController < ApplicationController
   before_action :find_item, only: [:update, :edit, :show, :destroy, :category]
   before_action :scrape, only: [:create]
@@ -6,7 +8,7 @@ class ItemsController < ApplicationController
   def index
     if params[:sort].present?
       @items = Item.all.order(params[:sort])
-    if params[:query].present?
+    elsif params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
       @items = Item.where(sql_query, query: "%#{params[:query]}%")
     else
@@ -51,7 +53,7 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
-  private
+private
 
   def find_item
     @item = Item.find(params[:id])
@@ -60,7 +62,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:category_id, :item_url, :sort, :name, :created_at, :price, :purchased, :description)
   end
-end
 
 
   def scrape

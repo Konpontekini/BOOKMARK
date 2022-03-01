@@ -4,6 +4,20 @@
 
   <%# <div class="row items"> %>
     <h2>Your current Bookmarks.</h2>
+
+    <%# // sort form added %>
+
+  <div class="pt-4 pb-4">
+    <%= form_tag items_path, method: :get do  %>
+      <%= select_tag(:sort, options_for_select([:name,:price,:created_at], params[:sort]), include_blank: true)
+        # params[:sort]
+        # class: "form-control"
+      %>
+      <%= submit_tag "Sort", class: "btn btn-primary" %>
+    <% end %>
+    <%# <%= submit_tag "Sort", class: "btn btn-primary" %>
+    <%# <% form_with(url: item_path(@item) do |form| %>
+
     <%# // search form added %>
     <div class="pt-4 pb-4">
     <%= form_tag items_path, method: :get do %>
