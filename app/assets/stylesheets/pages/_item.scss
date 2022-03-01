@@ -36,3 +36,20 @@
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
+.card-deck{
+// width: 100vw;
+display: grid;
+grid-template-rows: 1fr 1fr 1fr;
+grid-template-rows: 1fr 1fr 1fr;
+gap: 2px 2px;
+grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . .";
+}
+
+.card{
+  margin: 4px;
+  width: 300px
+}
