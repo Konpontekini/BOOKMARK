@@ -1,6 +1,7 @@
 <%# <%= link_to "New Categories", new_category_path, class:"btn btn-primary" %>
 
 <div class="top-container">
+
   <%# <div class="row items"> %>
     <h2>Your current Bookmarks.</h2>
     <%# // search form added %>
@@ -17,7 +18,6 @@
   <%# </div> %>
 </div>
 
-
 <%# <div class="sidebar-categories">
   <h3><%= link_to "All items", items_path %>
   <%# <% @categories.each do |category| %>
@@ -25,28 +25,24 @@
  <%#  <% end %>
 <%# </div> %>
 
-
-
 <%# // The Cards are coded below %>
-
 
 <div class="card-deck" style="width: 100vw; display: flex; column-count:3;">
 <% @items.each do |item| %>
   <div class="card" style="margin: 4px; width: 350px;">
-    <img src="https://res.cloudinary.com/dajifvnn5/image/upload/v1645110269/Computer_comparison_bjpxfu.jpg" class="card-img-top" width = "50px" height = "150px">
+    <img src=<%= item.image_url %> class="card-img-top" width = "50px" height = "150px">
       <div class="card-body>
         <h5 class="card-title"><%= item.name %></h5>
         <p class="card-text">Price: <%= item.price %></p>
       </div>
       <div class="card-footer">
-            <%= link_to 'More info', item_path(item), class: "btn btn-dark" %>
-            <%= link_to 'update', edit_item_path(item), class: "btn btn-dark" %>
-            <%= link_to "delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" %>
+            <%= link_to 'More', item_path(item), class: "btn btn-dark" %>
+            <%= link_to 'Change category', edit_item_path(item), class: "btn btn-dark" %>
+            <%= link_to "Delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" %>
       </div>
   </div>
   <% end %>
 </div>
-
 
 <div class="item-create">
     <%# <%= render 'form', item: @item, category: @category %>
