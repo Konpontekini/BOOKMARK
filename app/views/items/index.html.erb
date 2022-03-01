@@ -2,7 +2,7 @@
 
 <div class="top-container">
   <div class="row items">
-    <h2>Your current Bookmarks.</h2>
+    <h2>Your current Bookmarks</h2>
   </div>
 
   <%# <div class="sidebar-categories">
@@ -20,28 +20,27 @@
           <div class="item-basic-info">
             <h3><%= item.category.name %></h3>
             <h4><%= item.name %></h4>
-            <p><%= item.item_url %></p>
+            <img class="d-block w-50" src=<%= item.image_url %> alt="">
           </div>
 
           <div class="item-description-price">
             <i class="description">Description:</i><span><%= item.description %></span>
-            <i class="price">Price: £</i><%= item.price %>
+            <i class="price">Price: </i><span><%= item.price %></span>
           </div>
 
           <div class="item-actions">
-            <%= link_to 'More info', item_path(item) %>
-            <%= link_to 'update', edit_item_path(item) %>
+            <%= link_to 'More', item_path(item) %>
+            <%= link_to 'Change category', edit_item_path(item) %>
             <%= link_to "delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-ghost" %>
           </div>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
   
   <div class="item-create">
     <h5>Create your items</h5>
-     <%# <%= render 'form', item: @item, category: @category %>
      <%= link_to 'add an item', new_item_path, class: 'btn btn-flat' %>
   </div>
 
