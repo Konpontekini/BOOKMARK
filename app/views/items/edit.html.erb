@@ -1,7 +1,12 @@
 <div class="container-edit">
   <div class="form-item-edit">
-    <h1>Update my item</h1>
-      <%= render "form", category: @category, item: @item %>
+    <h1>Change category</h1>
+      <%# <%= render "form", category: @category, item: @item %>
+    <%= simple_form_for [@category, @item] do |f| %>
+    <%= f.association :category %>
+    <%# <%= f.input :item_url %>
+    <%= f.submit class: 'btn btn-primary', id: 'add-update-item' %>
+    <% end %>
   </div>
 </div>
 
