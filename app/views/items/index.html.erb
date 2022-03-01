@@ -1,47 +1,50 @@
 <%# <%= link_to "New Categories", new_category_path, class:"btn btn-primary" %>
 
 <div class="top-container">
-  <div class="row items">
-    <h2>Your current Bookmarks</h2>
-  </div>
 
-  <%# <div class="sidebar-categories">
-    <h3><%= link_to "All items", items_path %>
-    <%# <% @categories.each do |category| %>
-    <%# <%= link_to category.name %>
-    <%# <% end %>
-  <%# </div> %>
-
-<div class="main-container">
-  <div class="row items">
-    <% @items.each do |item| %>
-      <div class="item card">
-        <div class="item-card-info">
-          <div class="item-basic-info">
-            <h3><%= item.category.name %></h3>
-            <h4><%= item.name %></h4>
-            <img class="d-block w-50" src=<%= item.image_url %> alt="">
-          </div>
-
-          <div class="item-description-price">
-            <i class="description">Description:</i><span><%= item.description %></span>
-            <i class="price">Price: </i><span><%= item.price %></span>
-          </div>
-
-          <div class="item-actions">
-            <%= link_to 'More', item_path(item) %>
-            <%= link_to 'Change category', edit_item_path(item) %>
-            <%= link_to "delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-ghost" %>
-          </div>
-        </div>
-      </div>
+  <%# <div class="row items"> %>
+    <h2>Your current Bookmarks.</h2>
+    <%# // search form added %>
+    <div class="pt-4 pb-4">
+    <%= form_tag items_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a Bookmarked Item"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
     </div>
+  <%# </div> %>
+</div>
+
+<%# <div class="sidebar-categories">
+  <h3><%= link_to "All items", items_path %>
+  <%# <% @categories.each do |category| %>
+  <%# <%= link_to category.name %>
+ <%#  <% end %>
+<%# </div> %>
+
+<%# // The Cards are coded below %>
+
+<div class="card-deck" style="width: 100vw; display: flex; column-count:3;">
+<% @items.each do |item| %>
+  <div class="card" style="margin: 4px; width: 350px;">
+    <img src=<%= item.image_url %> class="card-img-top" width = "50px" height = "150px">
+      <div class="card-body>
+        <h5 class="card-title"><%= item.name %></h5>
+        <p class="card-text">Price: <%= item.price %></p>
+      </div>
+      <div class="card-footer">
+            <%= link_to 'More', item_path(item), class: "btn btn-dark" %>
+            <%= link_to 'Change category', edit_item_path(item), class: "btn btn-dark" %>
+            <%= link_to "Delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" %>
+      </div>
+  </div>
   <% end %>
 </div>
-  
-  <div class="item-create">
-    <h5>Create your items</h5>
-     <%= link_to 'add an item', new_item_path, class: 'btn btn-flat' %>
-  </div>
 
-      
+<div class="item-create">
+    <%# <%= render 'form', item: @item, category: @category %>
+    <%= link_to 'add an item', new_item_path, class: 'btn btn-warning' %>
+</div>
