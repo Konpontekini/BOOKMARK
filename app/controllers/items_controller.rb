@@ -65,11 +65,12 @@ class ItemsController < ApplicationController
     @url = params[:item][:item_url]
     html_file = URI.open(@url).read
     html_doc = Nokogiri::HTML(html_file)
-    
+
     if @url.include?('etsy')
       name = html_doc.search('.wt-text-body-03.wt-line-height-tight.wt-break-word').text.strip
       description = html_doc.search("#product-details-content-toggle > div > ul").text.strip
-      price = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip
+      price = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/£\d+.\d{2}/)
+      original_price = original_price = html_doc.search('.wt-text-strikethrough.wt-text-caption.wt-text-gray.wt-mr-xs-1').text.strip.match(/£\d+.\d{2}/)
       elements = []
       html_doc.search('.wt-position-absolute.wt-width-full.wt-height-full.wt-position-top.wt-position-left.carousel-pane img').each do |element|
         image = element["src"]
@@ -96,7 +97,8 @@ class ItemsController < ApplicationController
       item_url: @url,
       price: price,
       description: description,
-      image_url: image_url
+      image_url: image_url,
+      original_price: original_price
     }
   end
 end
