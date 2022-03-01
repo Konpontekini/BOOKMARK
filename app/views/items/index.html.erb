@@ -34,6 +34,7 @@
       <div class="card-body>
         <h5 class="card-title"><%= item.name %></h5>
         <p class="card-text">Price: <%= item.price %> <s> <%= (item.original_price) ? item.original_price : ""%></s> </p>
+        <p> Category: <%= item.category.name %>  </p>
       </div>
       <div class="card-footer">
             <%= link_to 'More', item_path(item), class: "btn btn-dark" %>
