@@ -35,13 +35,14 @@
 
 <%# // The Cards are coded below %>
 
-<div class="card-deck" style="width: 100vw; display: flex; column-count:3;">
+<div class="card-deck">
 <% @items.each do |item| %>
-  <div class="card" style="margin: 4px; width: 350px;">
+  <div class="card">
     <img src=<%= item.image_url %> class="card-img-top" width = "50px" height = "150px">
       <div class="card-body>
         <h5 class="card-title"><%= item.name %></h5>
-        <p class="card-text">Price: <%= item.price %></p>
+        <p class="card-text">Price: <%= item.price %> <s> <%= (item.original_price) ? item.original_price : ""%></s> </p>
+        <p> Category: <%= item.category.name %>  </p>
       </div>
       <div class="card-footer">
             <%= link_to 'More', item_path(item), class: "btn btn-dark" %>
