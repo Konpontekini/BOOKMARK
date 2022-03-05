@@ -34,12 +34,13 @@ end
 
 puts "Creating items..."
 
-curtain = { user: User.last, name: "net curtain", description: "nice curtain for bedrooms", price: "£86", purchased: false, category: Category.first , item_url: "https://www.johnlewis.com/gp-j-baker-poppy-paisley-made-to-measure-curtains-or-roman-blind-ochre/p5660062" }
-bed = { user: User.last, name: "bed", description: "comfortable bed", price: "£729", purchased: false, category: Category.first , item_url: "https://www.johnlewis.com/john-lewis-partners-rattan-bed-frame-king-size/p4147243" }
-# shoe = { user: User.last, category: "fashion", item_url: "https://www.farfetch.com/uk/shopping/women/prada-logo-plaque-detail-panelled-boots-item-16762068.aspx?storeid=11240" }
-shoe = { user: User.last, name: "boot", description: "fashionable boots", category: Category.last, price: "$1,100", purchased: false, item_url: "https://www.farfetch.com/uk/shopping/women/prada-logo-plaque-detail-panelled-boots-item-16762068.aspx?storeid=11240" }
+curtain = { user: User.last, name: "net curtain", description: "nice curtain for bedrooms", price: "£16.9", purchased: false, category: Category.first , item_url: "https://www.etsy.com/uk/listing/1005168066/velvet-curtain-36-colors-rod-pocket?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=curtain&ref=sc_gallery-1-1&pro=1&frs=1&listing_id=1005168066&listing_slug=velvet-curtain-36-colors-rod-pocket&plkey=46100b82c0725d257bedd3dfa7bed4846ef6bdc4%3A1005168066", image_url: "https://i.etsystatic.com/20098313/r/il/9f421a/3264855092/il_1588xN.3264855092_rurc.jpg" }
+bed = { user: User.last, name: "bed", description: "comfortable bed", price: "£218.99", purchased: false, category: Category.first , item_url: "https://www.etsy.com/uk/listing/710794101/nodax-wooden-solid-pine-bed-frame-model?click_key=9b9afdd738e76770371d2e75902cfe64ed9d4951%3A710794101&click_sum=a358167d&ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=bed&ref=sr_gallery-1-1&organic_search_click=1&frs=1&bes=1", image_url: "https://i.etsystatic.com/20288125/r/il/bfc5a6/1896653412/il_794xN.1896653412_4p98.jpg" }
+shoe = { user: User.last, name: "shoes", description: "fashionable boots", category: Category.last, price: "£21.9", purchased: false, item_url: "https://www.etsy.com/uk/listing/789882612/daisy-embroidered-felt-slippers-lucky?ga_order=most_relevant&ga_search_type=all&ga_view_type=gallery&ga_search_query=shoes&ref=sc_gallery-1-3&pro=1&frs=1&listing_id=789882612&listing_slug=daisy-embroidered-felt-slippers-lucky&plkey=e49ab71dd364955028ff9f47e48d8e1578746a8b%3A789882612", image_url: "https://i.etsystatic.com/17066802/r/il/776aad/2343561423/il_1588xN.2343561423_ku3j.jpg" }
+dress = { user: User.last, name: "dress", description: "Vince - Satin slip skirt", category: Category.last, price: "£315", purchased: false, item_url: "https://www.mytheresa.com/en-de/vince-satin-slip-skirt-2156819.html?catref=category", image_url: "https://img.mytheresa.com/1088/1088/66/jpeg/catalog/product/2d/P00660556.jpg" }
 
-[ curtain, bed, shoe ].each do |attributes|
+
+[ curtain, bed, shoe, dress ].each do |attributes|
   item = Item.create!(attributes)
   puts "Created #{item.name}"
 end

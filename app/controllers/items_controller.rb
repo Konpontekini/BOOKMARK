@@ -1,12 +1,14 @@
+require 'pry'
 require 'open-uri'
 require 'nokogiri'
-
 class ItemsController < ApplicationController
   before_action :find_item, only: [:update, :edit, :show, :destroy, :category]
   before_action :scrape, only: [:create]
 
   def index
-    if params[:query].present?
+    if params[:sort].present?
+      @items = Item.all.order(params[:sort])
+    elsif params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
       @items = Item.where(sql_query, query: "%#{params[:query]}%")
     else
@@ -51,15 +53,16 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
-  private
+private
 
   def find_item
     @item = Item.find(params[:id])
   end
 
   def item_params
-    params.require(:item).permit(:category_id, :item_url, :name, :price, :description, :purchased)
+    params.require(:item).permit(:category_id, :item_url, :sort, :name, :created_at, :price, :purchased, :description)
   end
+
 
   def scrape
     @url = params[:item][:item_url]
@@ -69,8 +72,8 @@ class ItemsController < ApplicationController
     if @url.include?('etsy')
       name = html_doc.search('.wt-text-body-03.wt-line-height-tight.wt-break-word').text.strip
       description = html_doc.search("#product-details-content-toggle > div > ul").text.strip
-      price = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/£\d+.\d{2}/)
-      original_price = original_price = html_doc.search('.wt-text-strikethrough.wt-text-caption.wt-text-gray.wt-mr-xs-1').text.strip.match(/£\d+.\d{2}/)
+      price = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/£?€?\d+.\d{2}/)
+      original_price = html_doc.search('.wt-text-strikethrough.wt-text-caption.wt-text-gray.wt-mr-xs-1').text.strip.match(/£?€?\d+.\d{2}/)
       elements = []
       html_doc.search('.wt-position-absolute.wt-width-full.wt-height-full.wt-position-top.wt-position-left.carousel-pane img').each do |element|
         image = element["src"]
@@ -102,23 +105,3 @@ class ItemsController < ApplicationController
     }
   end
 end
-
-
-# Farfetch
-# name = html_doc.search('#bannerComponents-Container > h1 > span._b4693b._2ef212._b4693b').text.strip
-# description = html_doc.search('#panelInner-0 > div > div:nth-child(1) > div._1b910b._ab46e0 > ul')
-# price = html_doc.search('#content > div.noTouch > div._89a1a1 > div._b350ae > div._071112 > div._f08199 > div > div > span').text.strip
-# elements = []
-# html_doc.search('#content > div.noTouch > div._89a1a1 > div._b350ae > div._3bc5b1 > div > div._8a37de._b6b6d1 > div:nth-child(1) > div > div > img').each do |element|
-# html_doc.search('.css-u2g8cx-BaseImg e2u0eu40').each do |element|
-# image = element["src"]
-# elements << image
-# end
-# image_url = elements[0]
-
-#newchic
-# name = html_doc.search('.d-inline.product-info-product-name-js.product-info__product-name').text.strip
-# price = html_doc.search(".Product-detail__price").text.strip.t_f
-
-# Etsy - img
-# html_doc.search('.wt-list-unstyled.wt-overflow-hidden.wt-position-relative.carousel-pane-list li img').each do |element|
