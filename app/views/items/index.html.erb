@@ -18,16 +18,6 @@
     <%# <% form_with(url: item_path(@item) do |form| %>
 
     <%# // search form added %>
-
-    <div class="pt-4 pb-4">
-    <%= form_tag items_path, method: :get do  %>
-      <%= select_tag(:sort, options_for_select([["Alphabetical", :name],["Highest Price", :price],["Oldest",:created_at]], params[:sort]), include_blank: true)
-        # params[:sort]
-        # class: "form-control"
-      %>
-      <%= submit_tag "Sort", class: "btn btn-primary" %>
-    <% end %>
-
     <div class="pt-4 pb-4">
     <%= form_tag items_path, method: :get do %>
       <%= text_field_tag :query,
