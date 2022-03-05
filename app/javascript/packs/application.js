@@ -30,3 +30,5 @@ document.addEventListener('turbolinks:load', () => {
   //   AnimateAsynch();
   // }
 });
+
+import "controllers"
