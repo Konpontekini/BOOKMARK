@@ -1,6 +1,6 @@
+require 'pry'
 require 'open-uri'
 require 'nokogiri'
-
 class ItemsController < ApplicationController
   before_action :find_item, only: [:update, :edit, :show, :destroy, :category]
   before_action :scrape, only: [:create]
@@ -57,15 +57,16 @@ class ItemsController < ApplicationController
     redirect_to items_path
   end
 
-  private
+private
 
   def find_item
     @item = Item.find(params[:id])
   end
 
   def item_params
-    params.require(:item).permit(:category_id, :item_url, :name, :price, :original_price, :description, :purchased)
+    params.require(:item).permit(:category_id, :item_url, :sort, :name, :created_at, :price, :original_price, :purchased, :description)
   end
+
 
   def scrape
     @url = params[:item][:item_url]
