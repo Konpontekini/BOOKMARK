@@ -6,11 +6,15 @@ class ItemsController < ApplicationController
   before_action :scrape, only: [:create]
 
   def index
+    @categories = Category::CATEGORIES
     if params[:sort].present?
       @items = Item.all.order(params[:sort])
     elsif params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
       @items = Item.where(sql_query, query: "%#{params[:query]}%")
+    elsif params[:filter].present?
+      category = Category.find_by(name: params[:filter])
+      @items = Item.where(category: category)
     else
       @items = Item.all
     end
