@@ -20,6 +20,7 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+import { initialiseDropdown } from '../components/navbar';
 // import {AnimateAsynch, createImageSlider} from '../custom.js';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -29,4 +30,5 @@ document.addEventListener('turbolinks:load', () => {
   //   createImageSlider();
   //   AnimateAsynch();
   // }
+  initialiseDropdown();
 });

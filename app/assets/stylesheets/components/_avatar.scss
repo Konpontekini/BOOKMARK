@@ -19,7 +19,11 @@
   border: white 1px solid;
 }
 
-#navbarDropdown {
-  width: 32px;
+.navbarDropdown {
+  width: 28px;
   border-radius: 50%;
+  color: white;
+  padding: -1px;
+  margin-top: 8px;
+  margin-right: 15px;
 }
