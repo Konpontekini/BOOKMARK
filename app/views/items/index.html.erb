@@ -3,8 +3,7 @@
 <div class="top-container">
 
   <%# <div class="row items"> %>
-    <h2>Your current Bookmarks.</h2>
-
+    <h2>Your current Bookmarks</h2>
     <%# // sort form added %>
 
   <div class="pt-4 pb-4">
@@ -19,6 +18,16 @@
     <%# <% form_with(url: item_path(@item) do |form| %>
 
     <%# // search form added %>
+
+    <div class="pt-4 pb-4">
+    <%= form_tag items_path, method: :get do  %>
+      <%= select_tag(:sort, options_for_select([["Alphabetical", :name],["Highest Price", :price],["Oldest",:created_at]], params[:sort]), include_blank: true)
+        # params[:sort]
+        # class: "form-control"
+      %>
+      <%= submit_tag "Sort", class: "btn btn-primary" %>
+    <% end %>
+
     <div class="pt-4 pb-4">
     <%= form_tag items_path, method: :get do %>
       <%= text_field_tag :query,
@@ -38,8 +47,9 @@
 <div class="card-deck">
 <% @items.each do |item| %>
   <div class="card">
-    <img src=<%= item.image_url %> class="card-img-top" width = "50px" height = "150px">
-      <div class="card-body>
+    <img src=<%= item.image_url.first %> class="card-img-top" width = "50px" height = "150px">
+      <div class="card-body">
+        <%= item.category.name %>
         <h5 class="card-title"><%= item.name %></h5>
         <p class="card-text">Price: <%= item.price %> <s> <%= (item.original_price) ? item.original_price : ""%></s> </p>
         <p> Category: <%= item.category.name %>  </p>
