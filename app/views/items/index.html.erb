@@ -1,79 +1,83 @@
 <div class="top-container">
+    <%# // Welcome message %>
+    <div class="summary-info">
+      <h2>Hello <%= current_user.first_name %> :)</h2>
+      <p>You have <%= pluralize @items.count, 'saved item' %> ✌️ 🛒</p>
+    </div>
 
-  <%# <div class="row items"> %>
-    <h2>Your current Bookmarks</h2>
-    <%# // sort form added %>
+    <%# // search form starts here %>
+    <div class="search-bar">
+      <%= form_tag items_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search ..."
+      %>
+      <%= submit_tag "Go!", class: "btn btn-primary btn-sm" %>
+    <% end %>
+    </div>
+</div>
 
-  <div class="pt-4 pb-4">
+  <%# // sort form starts here %>
+  <div class="sort-form">
     <%= form_tag items_path, method: :get do  %>
       <%= select_tag(:sort, options_for_select([["Alphabetical", :name],["Highest Price", :price],["Oldest",:created_at]], params[:sort]), include_blank: true)
         # params[:sort]
         # class: "form-control"
       %>
-      <%= submit_tag "Sort", class: "btn btn-primary" %>
+      <%= submit_tag "Sort", class: "btn btn-outline-primary btn-sm" %>
     <% end %>
 
-    <%# // search form added %>
-    <div class="pt-4 pb-4">
-    <%= form_tag items_path, method: :get do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a Bookmarked Item"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-    </div>
-</div>
 
 <%# // The Cards are coded below %>
-
 <div class="card-deck">
-<% @items.each do |item| %>
+  <% @items.each do |item| %>
+  <%# // Main body of the cards starts here; only showing the first image %>
   <div class="card">
     <img src=<%= item.image_url.first %> class="card-img-top" width = "50px" height = "150px">
       <div class="card-body">
-        <p><%= item.category.name %></p>
         <h5 class="card-title"><%= item.name %></h5>
         <p class="card-text">Price: <%= item.price %> <s> <%= (item.original_price) ? item.original_price : ""%></s> </p>
         <p class="category-description"> Category: <%= item.category.name %>  </p>
       </div>
       <div class="card-footer">
-            <%= link_to "Delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary"%>
-            <%# // The More button starts here %>
-
-            <button type="button" class="btn btn-basic" data-toggle="modal" data-target="#<%= dom_id(item) %>">
-          More</button>
-            <div class="modal fade" id="<%= dom_id(item) %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Full description</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                  <div class="item-details">
-                  <h3><%= item.category.name %></h3>
-                  <% item.image_url.each do |image_url| %>
+        <%# // Footer with all the buttons starts here %>
+            <%# // This is the Delete button %>
+            <%= link_to "Delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm"%>
+            <%# // This is the More button %>
+            <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#<%= dom_id(item) %>">
+            More Item Info</button>
+               <%# // This is the code for the More button popup window %>
+              <div class="modal fade" id="<%= dom_id(item) %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Full item description 🕵️‍♂️</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                    <div class="item-details">
+                    <h3><%= item.category.name %></h3>
+                      <% item.image_url.each do |image_url| %>
                       <img src=<%= image_url %> class="card-img-top" width = "50px" height = "150px">
-                    <% end %>
-                  <h4><%= item.name %><h4>
-                  <h4><%= item.description %><h4>
-                  <h4><%= item.price %><h4>
-                </div>
+                      <% end %>
+                    <h4><%= item.name %><h4>
+                    <h4><%= item.description %><h4>
+                    <h4><%= item.price %><h4>
                   </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Got it!</button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <%# // The Change Category button starts here %>
-            <%= link_to 'Change category', edit_item_path(item), class: "btn btn-dark" %>
-              <%# // The Buy button starts here %>
-        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal2">
+            <%# // This is the Change Button %>
+            <%= link_to 'Change category', edit_item_path(item), class: "btn btn-dark btn-sm" %>
+            <%# // The Buy button starts here %>
+            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModal2">
             Buy</button>
               <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -94,7 +98,6 @@
                   </div>
                 </div>
               </div>
-
       </div>
   </div>
   <% end %>
