@@ -28,8 +28,12 @@ class ItemsController < ApplicationController
     @item.user = current_user
     @category = Category.find(params[:item][:category_id])
     @item.category = @category
-    @item.save!
-    redirect_to items_path
+    if @item.save!
+      @item.save!
+      redirect_to items_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -60,48 +64,71 @@ private
   end
 
   def item_params
-    params.require(:item).permit(:category_id, :item_url, :sort, :name, :created_at, :price, :purchased, :description)
+    params.require(:item).permit(:category_id, :item_url, :sort, :name, :created_at, :price, :original_price, :purchased, :description)
   end
 
 
   def scrape
     @url = params[:item][:item_url]
-    html_file = URI.open(@url).read
+    html_file = URI.open(@url, "Accept-Language" => "en-US").read
     html_doc = Nokogiri::HTML(html_file)
 
     if @url.include?('etsy')
       name = html_doc.search('.wt-text-body-03.wt-line-height-tight.wt-break-word').text.strip
       description = html_doc.search("#product-details-content-toggle > div > ul").text.strip
       price = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/£?€?\d+.\d{2}/)
+      # price = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/[1-9]\d*(\.\d+)?/)
       original_price = html_doc.search('.wt-text-strikethrough.wt-text-caption.wt-text-gray.wt-mr-xs-1').text.strip.match(/£?€?\d+.\d{2}/)
       elements = []
-      html_doc.search('.wt-position-absolute.wt-width-full.wt-height-full.wt-position-top.wt-position-left.carousel-pane img').each do |element|
-        image = element["src"]
+      html_doc.search('.wt-max-width-full.wt-horizontal-center.wt-vertical-center.carousel-image.wt-rounded').first(3).each do |element|
+        image = element["data-src-zoom-image"]
         elements << image
       end
-      image_url = elements[0]
+       image_url = elements
+
+       @attributes = {
+        name: name,
+        item_url: @url,
+        price: price,
+        description: description,
+        image_url: image_url,
+        original_price: original_price
+      }
+
     else
       # Mytheresa
       name_brand = html_doc.search('.product-designer span a').text.strip
       name_product = html_doc.search('.product-name span').text.strip
-      name = "#{name_brand} - #{name_product}"
+      name = "#{name_brand} | #{name_product}"
       description = html_doc.search('.pa1.product-description').text.strip
-      price = html_doc.search('.price-box span span').first.text.strip
+      price = html_doc.search('.product-view .product-essential form .product-shop .price-info .price-box .special-price span').first.text.strip rescue ''
+      original_price = html_doc.search('.price').first.text.strip
       elements = []
-      html_doc.search('.gallery-image').each do |element|
+      html_doc.search('.gallery-image').first(3).each do |element|
         image = "https:#{element["src"]}"
         elements << image
       end
-      image_url = elements[0]
-    end
+      image_url = elements
 
-    @attributes = {
-      name: name,
-      item_url: @url,
-      price: price,
-      description: description,
-      image_url: image_url,
-      original_price: original_price
-    }
+      if price.empty?
+        @attributes = {
+          name: name,
+          item_url: @url,
+          price: original_price,
+          description: description,
+          image_url: image_url,
+          # original_price: original_price
+        }
+      else
+        @attributes = {
+          name: name,
+          item_url: @url,
+          price: price,
+          description: description,
+          image_url: image_url,
+          original_price: original_price
+        }
+      end
+    end
   end
 end
