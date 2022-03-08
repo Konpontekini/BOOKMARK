@@ -1,5 +1,5 @@
-class ChangePriceToBeStringInItems < ActiveRecord::Migration[6.1]
+class ChangePriceToBeIntegerInItems < ActiveRecord::Migration[6.1]
   def change
-    change_column :items, :price, :string
+    change_column :items, :price, :integer
   end
 end

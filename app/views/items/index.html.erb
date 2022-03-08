@@ -9,7 +9,7 @@
 
   <div class="pt-4 pb-4">
     <%= form_tag items_path, method: :get do  %>
-      <%= select_tag(:sort, options_for_select([["Alphabetical", :name],["Highest Price", :price],["Oldest",:created_at]], params[:sort]), include_blank: true)
+      <%= select_tag(:sort, options_for_select([:name,:price,:created_at], params[:sort]), include_blank: true)
         # params[:sort]
         # class: "form-control"
       %>
@@ -41,7 +41,7 @@
     <img src=<%= item.image_url %> class="card-img-top" width = "50px" height = "150px">
       <div class="card-body>
         <h5 class="card-title"><%= item.name %></h5>
-        <p class="card-text">Price: <%= item.price %> <s> <%= (item.original_price) ? item.original_price : ""%></s> </p>
+        <p class="card-text">Price: <%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{item.original_price.to_f/100}" : ""%></s> </p>
         <p> Category: <%= item.category.name %>  </p>
       </div>
       <div class="card-footer">
