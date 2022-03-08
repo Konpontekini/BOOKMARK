@@ -4,7 +4,7 @@
     // background-color: #eaeeed;
     // background-color: #1A1A1A;
     // background-color: #EAE9E6;
-    background-color: $light-pink;
+    background-color: white;
     object-fit: contain;
     display: flex;
     justify-content: space-between;
@@ -13,28 +13,24 @@
     // padding: 70px 100px 100px 100px;
 
   h1 {
-    color: $dark-pink;
+    color: #9F8972;
     // color:#eaeeed;
     font-size: 30px;
-    font-family: 'Cormorant', serif;
-    font-weight: bold;
+    font-family: Gill Sans;
   }
 
   h5 {
     color: $dark-pink;
     // color: #eaeeed;
     font-size: 20px;
-    font-family: 'Cormorant', serif;
-    font-weight: bold;
-    font-style: italic;
+    font-family: Gill Sans;
   }
 
   p {
     color: $dark-pink;
     // color: #eaeeed;
     font-size: 18px;
-    font-weight: bold;
-    font-family: 'Cormorant', serif;
+    font-family: Gill Sans;
   }
 }
 
@@ -57,7 +53,7 @@
     // border-radius: 15px;
     margin-top: 30px;
     margin-left: 130px;
-    margin-right: -180px;
+    margin-right: -379px;
     padding: 20px 20px 20px 20px;
   }
 
@@ -66,7 +62,7 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
-    margin-left: 140px;
+    margin-left: 300px;
     margin-right: -180px;
 
     p {
@@ -100,14 +96,14 @@
 // This is the get started button
 
 .btn-start {
-  border: solid 1px $charcol;
+  border: solid 1px #1A1A1A;
   padding: 10px 25px;
   // background-color: $brown;
   // transition: background 0.3s ease;
-  color: $charcol;
+  color: #1A1A1A;
   font-size: 16px;
-  font-weight: bolder;
-  font-family: 'Cormorant', serif;
+  font-family: Gill Sans;
+  margin-left: -25px;
 
   &:hover {
     background-color: $charcol;

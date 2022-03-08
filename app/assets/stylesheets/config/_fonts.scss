@@ -2,10 +2,15 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant&family=Cormorant+Garamond&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+// $body-font: "Work Sans", "Helvetica", "sans-serif";
+// $headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Cormorant Garamond", "Helvetica", "serif";
+$headers-font: "Cormorant Garamond", "Helvetica", "serif";
+// font-family: 'Cormorant', serif;
+// font-family: 'Cormorant Garamond', serif;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

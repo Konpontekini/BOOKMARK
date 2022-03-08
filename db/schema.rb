@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2022_03_05_124247) do
     t.integer "price"
     t.text "description"
     t.text "item_url"
-    t.text "image_url"
+    t.text "image_url", default: [], array: true
     t.boolean "purchased"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
