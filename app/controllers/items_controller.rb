@@ -78,11 +78,17 @@ private
     html_doc = Nokogiri::HTML(html_file)
 
     if @url.include?('etsy')
-      name = html_doc.search('.wt-text-body-03.wt-line-height-tight.wt-break-word').text.strip
+      name = html_doc.search('.wt-text-body-03.wt-line-height-tight.wt-break-word').text.strip.split(/[.,\-]/).first
       description = html_doc.search("#product-details-content-toggle > div > ul").text.strip
+<<<<<<< HEAD
+      currency = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/[£€]/).to_s
+      price = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/\d+.\d{2}/).to_s.sub(".","").to_i
+      original_price = html_doc.search('.wt-text-strikethrough.wt-text-caption.wt-text-gray.wt-mr-xs-1').text.strip.match(/\d+.\d{2}/).to_s.sub(".","").to_i
+=======
       price = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/£?€?\d+.\d{2}/)
       # price = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/[1-9]\d*(\.\d+)?/)
       original_price = html_doc.search('.wt-text-strikethrough.wt-text-caption.wt-text-gray.wt-mr-xs-1').text.strip.match(/£?€?\d+.\d{2}/)
+>>>>>>> master
       elements = []
       html_doc.search('.wt-max-width-full.wt-horizontal-center.wt-vertical-center.carousel-image.wt-rounded').first(3).each do |element|
         image = element["data-src-zoom-image"]
@@ -105,8 +111,13 @@ private
       name_product = html_doc.search('.product-name span').text.strip
       name = "#{name_brand} | #{name_product}"
       description = html_doc.search('.pa1.product-description').text.strip
+<<<<<<< HEAD
+      currency = html_doc.search('.price-box span span').text.strip.match(/[£€]/).to_s
+      price = html_doc.search('.price-box span span').first.text.strip.chars.select {|x| x.to_i.to_s == x}.join.to_i*100
+=======
       price = html_doc.search('.product-view .product-essential form .product-shop .price-info .price-box .special-price span').first.text.strip rescue ''
       original_price = html_doc.search('.price').first.text.strip
+>>>>>>> master
       elements = []
       html_doc.search('.gallery-image').first(3).each do |element|
         image = "https:#{element["src"]}"
@@ -114,6 +125,17 @@ private
       end
       image_url = elements
 
+<<<<<<< HEAD
+    @attributes = {
+      name: name,
+      item_url: @url,
+      price: price,
+      description: description,
+      image_url: image_url,
+      original_price: original_price,
+      currency: currency
+    }
+=======
       if price.empty?
         @attributes = {
           name: name,
@@ -134,5 +156,6 @@ private
         }
       end
     end
+>>>>>>> master
   end
 end

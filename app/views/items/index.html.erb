@@ -6,9 +6,30 @@
   </div>
 </div>
 
+<<<<<<< HEAD
+  <%# <div class="row items"> %>
+    <h2>Your current Bookmarks.</h2>
+
+    <%# // sort form added %>
+
+  <div class="pt-4 pb-4">
+    <%= form_tag items_path, method: :get do  %>
+      <%= select_tag(:sort, options_for_select([:name,:price,:created_at], params[:sort]), include_blank: true)
+        # params[:sort]
+        # class: "form-control"
+      %>
+      <%= submit_tag "Sort", class: "btn btn-primary" %>
+    <% end %>
+    <%# <%= submit_tag "Sort", class: "btn btn-primary" %>
+    <%# <% form_with(url: item_path(@item) do |form| %>
+
+    <%# // search form added %>
+    <div class="pt-4 pb-4">
+=======
 <div class="mid-container">
   <%# // search form starts here %>
   <div class="search-bar">
+>>>>>>> master
     <%= form_tag items_path, method: :get do %>
       <div class="search-form-control form-group">
         <%= text_field_tag :query,
@@ -50,6 +71,21 @@
     <% end %>
   </div>
 
+<<<<<<< HEAD
+<div class="card-deck">
+<% @items.each do |item| %>
+  <div class="card">
+    <img src=<%= item.image_url %> class="card-img-top" width = "50px" height = "150px">
+      <div class="card-body>
+        <h5 class="card-title"><%= item.name %></h5>
+        <p class="card-text">Price: <%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{item.original_price.to_f/100}" : ""%></s> </p>
+        <p> Category: <%= item.category.name %>  </p>
+      </div>
+      <div class="card-footer">
+            <%= link_to 'More', item_path(item), class: "btn btn-dark" %>
+            <%= link_to 'Change category', edit_item_path(item), class: "btn btn-dark" %>
+            <%= link_to "Delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-secondary" %>
+=======
   <%# // The Cards are coded below %>
   <div class="card-content item-cards">
     <% @items.each do |item| %>
@@ -121,6 +157,7 @@
             </div>
           </div>
         </div>
+>>>>>>> master
       </div>
     <% end %>
   </div>
