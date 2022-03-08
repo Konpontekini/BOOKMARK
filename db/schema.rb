@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_02_192347) do
+ActiveRecord::Schema.define(version: 2022_03_05_124247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2022_03_02_192347) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.string "price"
+    t.integer "price"
     t.text "description"
     t.text "item_url"
     t.text "image_url", default: [], array: true
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2022_03_02_192347) do
     t.bigint "category_id"
     t.bigint "user_id"
     t.string "original_price"
+    t.string "currency"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
