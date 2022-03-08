@@ -21,11 +21,12 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
+import { addClass } from '../components/sidebar.js';
 import { initialiseDropdown } from '../components/navbar';
 // import {AnimateAsynch, createImageSlider} from '../custom.js';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { addClass } from './sidebar.js';
+
 
 document.addEventListener('turbolinks:load', () => {
   // if (document.querySelector(".homepage-caroussel")) {
@@ -33,6 +34,7 @@ document.addEventListener('turbolinks:load', () => {
   //   AnimateAsynch();
   // }
   initialiseDropdown();
+  addClass();
 });
 
 import "controllers"
