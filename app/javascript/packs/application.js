@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
@@ -24,6 +25,7 @@ import { initialiseDropdown } from '../components/navbar';
 // import {AnimateAsynch, createImageSlider} from '../custom.js';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { addClass } from './sidebar.js';
 
 document.addEventListener('turbolinks:load', () => {
   // if (document.querySelector(".homepage-caroussel")) {
