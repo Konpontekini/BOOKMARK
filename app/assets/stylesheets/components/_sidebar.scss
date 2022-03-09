@@ -6,9 +6,9 @@
     background-color: white;
     // position: fixed;
     position: sticky;
-    top: 0;
+    // top: 0;
     height: 100%;
-    overflow: auto;
+    // overflow: auto;
   }
   
   /* Sidebar links */
@@ -27,7 +27,7 @@
   
   /* Links on mouse-over */
   .sidebar a:hover:not(.active) {
-    background-color: $charcol;
+    // background-color: $charcol;
     color: $dark-pink;
   }
   
@@ -35,7 +35,6 @@
   .card-content {
     margin-left: 200px;
     padding: 1px 16px;
-    height: 1000px;
   }
   
   /* On screens that are less than 700px wide, make the sidebar into a topbar */
