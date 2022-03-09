@@ -2,7 +2,7 @@
   <%# // Welcome message %>
   <div class="welcome-info">
     <h3>Hello <%= current_user.first_name %> ☺ </h3>
-    <h5>You have <%= pluralize @items.count, 'saved bookmark' %> ✌️ 🛒</h5>
+    <h4>You have <%= pluralize @items.count, 'saved bookmark' %> ✌️ 🛒</h4>
   </div>
 </div>
 
@@ -33,13 +33,9 @@
     <div class="sort-form">
       <%= form_tag items_path, method: :get do  %>
         <div class="search-form-control form-group">
-          <%= select_tag(:sort, options_for_select([["Alphabetical", :name],["Highest Price", :price],["Oldest",:created_at]], params[:sort]), include_blank: true)
-            # params[:sort]
-            # class: "form-control"
-        %>
-          <%= submit_tag "Sort", class: "btn btn-outline-primary btn-sm" %>
-        </div>
-      <% end %>
+          <%= select_tag(:sort, options_for_select([["Alphabetical", :name],["Highest Price", :price],["Oldest",:created_at]], params[:sort]), {prompt: "Sort By", onchange: "this.form.submit()"})%>
+        <%# <%= submit_tag "Sort", class: "btn btn-primary"%>
+        <% end %>
     </div>
   </div>
 </div>
@@ -47,31 +43,34 @@
 <div class="content-container">
   <%# // sidebar %>
   <div class="sidebar">
-    <%= link_to "All", items_path, class: "btn btn-category" %>
+    <%= link_to "All", items_path, class: "btn btn-category #{"active" unless params[:filter]}" %>
     <a class="btn btn-category">Purchased</a>
     <% @categories.each do |category| %>
-      <%= link_to category, items_path(sort: params[:sort], query: params[:query], filter: category), class: "btn btn-category" %>
+      <%= link_to category, items_path(sort: params[:sort], query: params[:query], filter: category), class: "btn btn-category #{"active" if params[:filter] == category }" %>
     <% end %>
   </div>
 
   <%# // The Cards are coded below %>
-  <div class="card-content item-cards">
-    <% @items.each do |item| %>
+  <div class="item-cards">
+    <%# <div class="item-card"> %>
+      <% @items.each do |item| %>
       <%# // Main body of the cards starts here; only showing the first image %>
       <div class="item-card">
-        <img src=<%= item.image_url.first %> class="card-img-top" width = "50px" height = "150px">
+        <img src=<%= item.image_url.first %> class="card-img-top" width = "50px" height = "230px">
+        
         <div class="card-body">
           <h5 class="card-title"><%= item.name %></h5>
           <p class="card-text">Price: <%= item.price %> <s> <%= (item.original_price) ? item.original_price : ""%></s> </p>
           <p class="category-description"> Category: <%= item.category.name %></p>
         </div>
+        
         <div class="card-footer">
           <%# // Footer with all the buttons starts here %>
           <%# // This is the Delete button %>
           <%= link_to "Delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm"%>
           <%# // This is the More button %>
           <button type="button" class="btn btn-dark btn-sm" data-toggle="modal" data-target="#<%= dom_id(item) %>">
-          More Info</button>
+            More Info</button>
             <%# // This is the code for the More button popup window %>
             <div class="modal fade" id="<%= dom_id(item) %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -122,7 +121,7 @@
           <%= link_to 'Change category', edit_item_path(item), class: "btn btn-dark btn-sm" %>
           <%# // The Buy button starts here %>
           <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#exampleModal2">
-          Buy</button>
+            Buy</button>
             <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -144,7 +143,6 @@
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
