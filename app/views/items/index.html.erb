@@ -2,7 +2,7 @@
   <%# // Welcome message %>
   <div class="welcome-info">
     <h3>Hello <%= current_user.first_name %> ☺ </h3>
-    <h5>You have <%= pluralize @items.count, 'saved bookmark' %> ✌️ 🛒</h5>
+    <h4>You have <%= pluralize @items.count, 'saved bookmark' %> ✌️ 🛒</h4>
   </div>
 </div>
 
@@ -55,12 +55,12 @@
   </div>
     
   <%# // The Cards are coded below %>
-  <div class="card-content item-cards">
+  <div class="item-cards">
     <%# <div class="item-card"> %>
       <% @items.each do |item| %>
       <%# // Main body of the cards starts here; only showing the first image %>
       <div class="item-card">
-        <img src=<%= item.image_url.first %> class="card-img-top" width = "50px" height = "150px">
+        <img src=<%= item.image_url.first %> class="card-img-top" width = "50px" height = "230px">
         
         <div class="card-body">
           <h5 class="card-title"><%= item.name %></h5>
