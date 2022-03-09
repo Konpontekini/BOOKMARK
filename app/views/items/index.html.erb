@@ -35,9 +35,10 @@
         <div class="search-form-control form-group">
           <%= select_tag(:sort, options_for_select([["Alphabetical", :name],["Highest Price", :price],["Oldest",:created_at]], params[:sort]), {prompt: "Sort By", onchange: "this.form.submit()"})%>
         <%# <%= submit_tag "Sort", class: "btn btn-primary"%>
+            </div>
         <% end %>
-    </div>
   </div>
+</div>
 </div>
 
 <div class="content-container">
@@ -57,13 +58,13 @@
       <%# // Main body of the cards starts here; only showing the first image %>
       <div class="item-card">
         <img src=<%= item.image_url.first %> class="card-img-top" width = "50px" height = "230px">
-        
+
         <div class="card-body">
           <h5 class="card-title"><%= item.name %></h5>
           <p class="card-text">Price: <%= item.price %> <s> <%= (item.original_price) ? item.original_price : ""%></s> </p>
           <p class="category-description"> Category: <%= item.category.name %></p>
         </div>
-        
+
         <div class="card-footer">
           <%# // Footer with all the buttons starts here %>
           <%# // This is the Delete button %>
