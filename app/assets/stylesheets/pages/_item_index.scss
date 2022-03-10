@@ -73,3 +73,11 @@
 .carousel{
   width: 450px;
 }
+
+.card-title {
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 250px;
+}

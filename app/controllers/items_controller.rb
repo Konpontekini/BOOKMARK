@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
     else
       @items = Item.all
     end
+    @items_count = Item.count
   end
 
   def new
