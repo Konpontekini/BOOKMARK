@@ -23,6 +23,8 @@ ActiveStorage.start()
 import "bootstrap";
 import { addClass } from '../components/sidebar.js';
 import { initialiseDropdown } from '../components/navbar';
+import { deleteHover } from '../components/cardDelete';
+
 // import {AnimateAsynch, createImageSlider} from '../custom.js';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,6 +37,7 @@ document.addEventListener('turbolinks:load', () => {
   // }
   initialiseDropdown();
   addClass();
+  deleteHover();
 });
 
 import "controllers"
