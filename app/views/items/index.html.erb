@@ -61,7 +61,7 @@
 
         <div class="card-body">
           <h5 class="card-title"><%= item.name %></h5>
-          <p class="card-text">Price: <%= item.price %> <s> <%= (item.original_price) ? item.original_price : ""%></s> </p>
+          <p class="card-text">Price: <%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{item.original_price.to_f/100}" : ""%></s> </p>
           <p class="category-description"> Category: <%= item.category.name %></p>
         </div>
 
