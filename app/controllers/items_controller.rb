@@ -89,6 +89,7 @@ private
         elements << image
       end
        image_url = elements
+       #ignore
 
        @attributes = {
         name: name,
@@ -106,9 +107,20 @@ private
       name_product = html_doc.search('.product-name span').text.strip
       name = "#{name_brand} | #{name_product}"
       description = html_doc.search('.pa1.product-description').text.strip
+      if html_doc.search('.price-box .special-price .price').present?
+        currency = html_doc.search('.price-box .special-price .price').text.strip.match(/[£€]/).to_s
+      else
       currency = html_doc.search('.price-box .regular-price .price').text.strip.match(/[£€]/).to_s
-      price = html_doc.search('.price-box .regular-price .price').first.text.strip.chars.select {|x| x.to_i.to_s == x}.join.to_i*100
-      original_price = html_doc.search('.price').first.text.strip
+      end
+      if html_doc.search('.price-box .special-price .price').present?
+        price = html_doc.search('.price-box .special-price .price').first.text.strip.chars.select {|x| x.to_i.to_s == x}.join.to_i*100
+      else
+        price = html_doc.search('.price-box .regular-price .price').first.text.strip.chars.select {|x| x.to_i.to_s == x}.join.to_i*100
+      end
+      if html_doc.search('.price-box .old-price .price').present?
+        original_price = html_doc.search('.price-box .old-price .price').first.text.strip.chars.select {|x| x.to_i.to_s == x}.join.to_i*100
+      else
+      end
       elements = []
       html_doc.search('.gallery-image').first(3).each do |element|
         image = "https:#{element["src"]}"
