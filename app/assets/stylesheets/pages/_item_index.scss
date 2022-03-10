@@ -73,3 +73,53 @@
 .carousel{
   width: 450px;
 }
+
+.fa-trash-alt{
+  font-size: 16px;
+  display: none;
+  border-radius: 3px;
+  padding: 2.5px 10px;
+  margin: 0 5px 5px 0;
+  color: $charcol;
+  opacity: 0.3;
+  cursor: default;
+  user-select: none;
+  text-decoration: none;
+
+  &:hover {
+    color: $charcol;
+    opacity: 1;
+    text-decoration: none;
+
+  }
+}
+
+.fa-tag{
+  font-size: 10px;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 2.5px 10px;
+  margin: 0 5px 5px 0;
+  color: $charcol;
+  opacity: 0.3;
+  cursor: default;
+  user-select: none;
+
+    &:hover {
+      color: $charcol;
+      opacity: 1;
+    }
+}
+
+.card-body:hover + .fa-trash-alt{
+  display: block;
+  }
+
+.card-title {
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 250px;
+}
+
