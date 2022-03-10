@@ -1,11 +1,11 @@
 .item-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding-right: 100px;
+  padding-left: 50px;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 1px 16px;
-  // flex-grow: 1;
-  margin-left: 100px;
-  margin-right: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
     
 .item-card {
@@ -13,37 +13,37 @@
   // width: 200px
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-    .item-cards {
-      grid-template-columns: 1fr;
-    }
-  }
+// // Smallest device
+// @media (min-width: 100px) and (max-width: 575px) {
+//     .item-cards {
+//       grid-template-columns: 1fr;
+//     }
+//   }
   
-  // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-    .item-cards {
-      grid-template-columns: 1fr;
-    }
-  }
+//   // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) {
+//     .item-cards {
+//       grid-template-columns: 1fr;
+//     }
+//   }
   
-  // Medium devices (tablets, 768px and up)
-  @media (min-width: 768px) {
-    .item-cards {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
+//   // Medium devices (tablets, 768px and up)
+//   @media (min-width: 768px) {
+//     .item-cards {
+//       grid-template-columns: 1fr 1fr;
+//     }
+//   }
   
-  // Large devices (desktops, 992px and up)
-  @media (min-width: 992px) {
-    .item-cards {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
+//   // Large devices (desktops, 992px and up)
+//   @media (min-width: 992px) {
+//     .item-cards {
+//       grid-template-columns: 1fr 1fr 1fr;
+//     }
+//   }
   
-  // Extra large devices (large desktops, 1200px and up)
-  @media (min-width: 1200px) {
-    .item-cards {
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-  }
+//   // Extra large devices (large desktops, 1200px and up)
+//   @media (min-width: 1200px) {
+//     .item-cards {
+//       grid-template-columns: 1fr 1fr 1fr 1fr;
+//     }
+//   }
