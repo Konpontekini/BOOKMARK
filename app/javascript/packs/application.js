@@ -21,9 +21,9 @@ ActiveStorage.start()
 
 // External imports
 import "bootstrap";
-import { addClass } from '../components/sidebar.js';
+// import { addClass } from '../components/sidebar.js';
 import { initialiseDropdown } from '../components/navbar';
-import { deleteHover } from '../components/cardDelete';
+import { showHover } from '../components/hover.js';
 
 // import {AnimateAsynch, createImageSlider} from '../custom.js';
 // Internal imports, e.g:
@@ -36,8 +36,8 @@ document.addEventListener('turbolinks:load', () => {
   //   AnimateAsynch();
   // }
   initialiseDropdown();
-  addClass();
-  deleteHover();
+  // addClass();
+  showHover();
 });
 
 import "controllers"

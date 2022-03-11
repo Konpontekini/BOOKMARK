@@ -3,10 +3,13 @@
   // same margin left as search bar and summary-info;  
     padding: 0;
     padding-left: 50px;
+    padding-right: 20px;
+    margin-top: 10px;
     background-color: white;
     // position: fixed;
     position: sticky;
     height: 100%;
+    border-right: solid 2px lightgrey;
   }
 
   .row-width {
@@ -18,13 +21,13 @@
     display: block;
     color: $charcol;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
   }
   
   // /* Active/current link */
   .sidebar a.active {
     background-color: $charcol;
-    color: $dark-pink;
+    color: $pale-grey;
   }
   
   /* Links on mouse-over */
