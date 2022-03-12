@@ -22,9 +22,6 @@
     }
   }
 
-
-
-
 .button-more {
   background-color: rgba(255,255,255,.7);
   width: 100%;
@@ -36,18 +33,20 @@
   font-size: 20px;
   line-height: 30px;
   border: solid 2px lightgrey;
-  display: hidden;
+  // display: hidden !important;
+  // opacity: 0;
     
-    &:hover {
-      transform: translateY(100%);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      transition: transform .2s, ease;
-      // transition: border-color .2s ease-in;
-      // box-shadow: .2s ease-in;
-      border: solid 2px $charcol;
-    }
+    // &:hover {
+    //   display: block;
+    //   transform: translateY(100%);
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   transition: transform .2s, ease;
+    //   // transition: border-color .2s ease-in;
+    //   // box-shadow: .2s ease-in;
+    //   border: solid 2px $charcol;
+    // }
 }
 
   .button.select {

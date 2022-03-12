@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm  navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <img src="https://cdn-user-icons.flaticon.com/65915/65915642/1646491866324.svg?token=exp=1646492772~hmac=7390cfbad51636bceb01b7129fd5c83f">
+    <img src="https://res.cloudinary.com/dajifvnn5/image/upload/v1647089917/bookmark_2_bogdxy.png">
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,15 +15,15 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "All Items", items_path, class: "nav-link" %>
+          <%= link_to "All Bookmarks", items_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
+        <%# <li class="nav-item">
           <%= link_to "Add Item", new_item_path(@item), class: "nav-link" %>
-        </li>
+        <%# </li> %>
 
 
         <li class="nav-item dropdown">
-          <%= image_tag "https://cdn-user-icons.flaticon.com/65915/65915642/1646492043997.svg?token=exp=1646492944~hmac=1725f37433fb650cc68712312a19d330", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://res.cloudinary.com/dajifvnn5/image/upload/c_thumb,w_200,g_face/v1647089905/user_opfmpc.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" id="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= current_user.first_name %> <%= current_user.last_name %>
             <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>

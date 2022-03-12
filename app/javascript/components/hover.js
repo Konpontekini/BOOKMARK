@@ -1,4 +1,3 @@
-// export const showHover = () => {
 export function showHover() {
   const itemCard = document.querySelectorAll(".item-card")
   itemCard.forEach(card => {
@@ -12,5 +11,3 @@ export function showHover() {
     })
   })
 }
-
-// export { showHover }
