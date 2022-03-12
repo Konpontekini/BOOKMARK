@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2022_03_12_151218) do
     t.bigint "category_id"
     t.bigint "user_id"
     t.string "original_price"
+    t.string "currency"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
