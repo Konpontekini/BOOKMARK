@@ -23,7 +23,7 @@
 
 
         <li class="nav-item dropdown">
-          <%= image_tag "https://res.cloudinary.com/dajifvnn5/image/upload/v1647089905/user_opfmpc.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://res.cloudinary.com/dajifvnn5/image/upload/c_thumb,w_200,g_face/v1647089905/user_opfmpc.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" id="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= current_user.first_name %> <%= current_user.last_name %>
             <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
