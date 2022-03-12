@@ -107,7 +107,11 @@ private
       name_brand = html_doc.search('.product-designer span a').text.strip
       name_product = html_doc.search('.product-name span').text.strip
       name = "#{name_brand} | #{name_product}"
-      description = html_doc.search('.pa1.product-description').text.strip
+      if html_doc.search('.pa1.product-description').present?
+        description = html_doc.search('.pa1.product-description').text.strip
+      else
+        description = html_doc.search('.pa1-rmm.product-description').text.strip
+      end
       if html_doc.search('.price-box .special-price .price').present?
         currency = html_doc.search('.price-box .special-price .price').text.strip.match(/[£€]/).to_s
       else
