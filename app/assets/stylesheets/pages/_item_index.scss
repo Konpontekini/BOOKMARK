@@ -68,8 +68,12 @@
   width: 100%;
 }
 
-.carousel{
+.carousel {
   width: 450px;
+}
+
+.carousel-item img {
+  object-fit: contain;
 }
 
 .item-description {
