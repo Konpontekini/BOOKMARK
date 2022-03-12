@@ -56,23 +56,6 @@
       <% @items.each do |item| %>
       <%# // Main body of the cards starts here; only showing the first image %>
         <div class="item-card">
-<<<<<<< HEAD
-          <img src=<%= item.image_url.first %> class="card-img-top" width = "50px" height = "230px">
-
-        <div class="card-body">
-          <h5 class="card-title"><%= item.name.truncate(24) %></h5>
-          <%# <p class="card-text">Price: <%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{'%.2f' % (item.original_price.to_f/100).to_s}" : ""%></s> </p> %>
-          <p class="category-description"> Category: <%= item.category.name %></p>
-          <%# // This is the Delete button %>
-          <%= link_to "", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-alt"%>
-        </div>
-
-        <div class="card-footer">
-          <%# // Footer with all the buttons starts here %>
-          <%# // This is the More button %>
-          <button type="button" class="fas fa-tag" style="border:none; text-decoration: none" data-toggle="modal" data-target="#<%= dom_id(item) %>">
-             More info</button>
-=======
           <%# <img src== item.image_url.first class="card-img-top img-responsive img-fluid" height="250px"> %>
             <img src=<%= item.image_url.first %> class="item-image">
             <%# // This is the More section %>
@@ -80,7 +63,6 @@
               <button type="button" class="button-more" data-toggle="modal" data-target="#<%= dom_id(item) %>">
                 Quick view</button>
             </div>
->>>>>>> 641e2a70ae40fb23f6a354084b5d9ea87ef35636
             <%# // This is the code for the More button popup window %>
             <div class="modal fade" id="<%= dom_id(item) %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
