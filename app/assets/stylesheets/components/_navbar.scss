@@ -9,37 +9,38 @@
   flex-grow: 0;
 }
 
+.navbar-nav.mr-auto {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
 .navbar-lewagon .navbar-brand img {
   width: 48px;
   border-radius: 60%;
   margin-left: 42px;
-  color: #9F8972;
+  // color: #9F8972;
   size: 15px;
 }
 
 .nav-link {
-  color: #9F8972;
+  color: $pale-grey;
   padding-right: 1.5rem;
   padding-left: 0.5rem;
-}
-
-.nav-item {
-  color: $dark-pink;
-  text-decoration: none;
-  font-size: 16px;
-  // font-family: Gill Sans;
   font-family: "Cormorant Garamond", "Helvetica", "serif";
-  font-size: 22px;
+  font-size: 20px;
+  text-decoration: none;
 
   &:hover {
-    color: $pale-grey;
+    color: $dark-pink;
   }
 }
 
 .dropdown-menu {
   text-align: center;
   white-space: nowrap;
-  color: #9F8972;
+  color: $dark-pink;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .dropdown-menu.open {
