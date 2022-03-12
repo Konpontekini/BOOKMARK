@@ -56,11 +56,11 @@
       <% @items.each do |item| %>
       <%# // Main body of the cards starts here; only showing the first image %>
         <div class="item-card">
-          <img src=<%= item.image_url.first %> class="card-img-top" width = "50px" height = "250px">
+          <img src=<%= item.image_url.first %> class="crd-img-top img-responsive img-fluid" width = "50px" height = "250px">
 
           <%# // This is the More section %>
           <button type="button" class="button-more" data-toggle="modal" data-target="#<%= dom_id(item) %>">
-             Quick view</button>
+            Quick view</button>
             <%# // This is the code for the More button popup window %>
             <div class="modal fade" id="<%= dom_id(item) %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -83,7 +83,7 @@
                             <img class="d-block w-30" src=<%= item.image_url[1] %> alt="Second slide">
                           </div>
                           <div class="carousel-item">
-                            <img class="d-block w-30" src=<%= item.image_url[2] %> alt="Third slide">   
+                            <img class="d-block w-30" src=<%= item.image_url[2] %> alt="Third slide">
                           </div>
                           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -109,19 +109,19 @@
               </div>
             </div>
             <%# // end more info section %>
-        
+
         <div class="card-body">
           <h5 class="card-title"><%= item.name.truncate(24) %></h5>
           <p class="card-price"><%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{'%.2f' % (item.original_price.to_f/100).to_s}" : ""%></s> </p>
           <div class="card-category">
             <i class="fas fa-tags"></i>
-            <p><%= item.category.name.capitalize %></p>   
-          </div>         
+            <p><%= item.category.name.capitalize %></p>
+          </div>
         </div>
 
         <div class="card-footer">
           <%# // Footer with all the buttons starts here %>
-          
+
           <%# // delete button %>
           <%= link_to "Delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-alt" %>
           <%# // end of delete button %>
