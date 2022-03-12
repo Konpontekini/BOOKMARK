@@ -45,7 +45,7 @@
   <div class="row row-width">
     <div class="sidebar col-2">
       <%= link_to "All", items_path, class: "btn btn-category #{"active" unless params[:filter]}" %>
-      <%= link_to "Purchased", items_path(filter: :purchased) %>
+      <%= link_to "Purchased", items_path(filter: :purchased), class: "purchase-btn" %>
       <% @categories.each do |category| %>
         <%= link_to category.capitalize, items_path(sort: params[:sort], query: params[:query], filter: category,), class: "btn btn-category #{"active" if params[:filter] == category }" %>
       <% end %>
