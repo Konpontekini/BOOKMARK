@@ -6,7 +6,23 @@
     transition: opacity 0.3s ease;
 
   }
-  
+
   .btn-ghost-search:hover {
     opacity: 1;
+  }
+
+  .btn-ghost-item {
+    background-color: #1A1A1A;
+    color: #9F8972;
+  }
+
+
+  .button, select {
+    background-color: #1A1A1A;
+    font-weight: lighter;
+    border: 1px solid #E7E7E7;
+    border-radius: 4px;
+    font-weight: 400;
+    color: #9F8972;
+    margin-right: 923px;
   }
