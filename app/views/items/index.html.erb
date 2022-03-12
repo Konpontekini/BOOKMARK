@@ -56,11 +56,13 @@
       <% @items.each do |item| %>
       <%# // Main body of the cards starts here; only showing the first image %>
         <div class="item-card">
-          <img src=<%= item.image_url.first %> class="card-img-top" width = "50px" height = "250px">
-
-          <%# // This is the More section %>
-          <button type="button" class="button-more" data-toggle="modal" data-target="#<%= dom_id(item) %>">
-            Quick view</button>
+          <%# <img src== item.image_url.first class="card-img-top img-responsive img-fluid" height="250px"> %>
+            <img src=<%= item.image_url.first %> class="item-image">
+            <%# // This is the More section %>
+            <div class="item-image-overlay">
+              <button type="button" class="button-more" data-toggle="modal" data-target="#<%= dom_id(item) %>">
+                Quick view</button>
+            </div>
             <%# // This is the code for the More button popup window %>
             <div class="modal fade" id="<%= dom_id(item) %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -97,7 +99,7 @@
                         <%# // end of code for caroussel %>
                         <h4 class="item-description"><%= item.description %><h4>
                         <%# <h4 class="item-price"><%= item.price<h4> %>
-                        <h4 class="item-price"><%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{'%.2f' % (item.original_price.to_f/100).to_s}" : ""%></s> </h4>
+                        <h4 class="item-price"><%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{'%.2f' % (item.original_price.to_f/100).to_s}" : ""%></s>  </h4>
                       </div>
                     </div>
                     <div class="modal-footer">
