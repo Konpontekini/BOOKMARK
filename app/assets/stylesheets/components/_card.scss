@@ -7,6 +7,21 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.item-card {
+  width: 300px;
+}
+
+.item-image {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+// .item-image:hover .item-image-overlay {
+//   background-color: black;
+//   opacity: 1;
+// }
+
 .card-body {
   padding: 0;
   h5 {
