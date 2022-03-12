@@ -37,7 +37,7 @@
   line-height: 30px;
   border: solid 2px lightgrey;
   display: hidden;
-    
+
     &:hover {
       transform: translateY(100%);
       position: absolute;
@@ -123,5 +123,16 @@
 
     &:hover {
       color: $dark-pink;
+    }
+  }
+
+  .btn.btn-primary {
+    background: #1A1A1A;
+    border-radius: 4px;
+    color: #9F8972;
+
+    &:hover {
+      color: white;
+      transition: color 1s ease;
     }
   }
