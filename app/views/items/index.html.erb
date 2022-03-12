@@ -56,7 +56,7 @@
       <% @items.each do |item| %>
       <%# // Main body of the cards starts here; only showing the first image %>
         <div class="item-card">
-          <img src=<%= item.image_url.first %> class="crd-img-top img-responsive img-fluid" width = "50px" height = "250px">
+          <img src=<%= item.image_url.first %> class="crd-img-top img-responsive img-fluid">
 
           <%# // This is the More section %>
           <button type="button" class="button-more" data-toggle="modal" data-target="#<%= dom_id(item) %>">
