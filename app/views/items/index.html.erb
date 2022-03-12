@@ -117,7 +117,7 @@
                         <%# // end of code for caroussel %>
                         <h4 class="item-description"><%= item.description %><h4>
                         <%# <h4 class="item-price"><%= item.price<h4> %>
-                        <h4 class="item-price"><%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{'%.2f' % (item.original_price.to_f/100).to_s}" : ""%></s> </h4>
+                        <h4 class="item-price"><%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{'%.2f' % (item.original_price.to_f/100).to_s}" : ""%></s>  </h4>
                       </div>
                     </div>
                     <div class="modal-footer">
@@ -129,19 +129,19 @@
               </div>
             </div>
             <%# // end more info section %>
-        
+
         <div class="card-body">
           <h5 class="card-title"><%= item.name.truncate(24) %></h5>
           <p class="card-price"><%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{'%.2f' % (item.original_price.to_f/100).to_s}" : ""%></s> </p>
           <div class="card-category">
             <i class="fas fa-tags"></i>
-            <p><%= item.category.name.capitalize %></p>   
-          </div>         
+            <p><%= item.category.name.capitalize %></p>
+          </div>
         </div>
 
         <div class="card-footer">
           <%# // Footer with all the buttons starts here %>
-          
+
           <%# // delete button %>
           <%= link_to "Delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-alt" %>
           <%# // end of delete button %>
