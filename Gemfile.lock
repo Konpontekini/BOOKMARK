@@ -312,8 +312,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-<<<<<<< HEAD
    2.3.9
-=======
-   2.3.7
->>>>>>> dcef72f824b5abdacd1f9fdbdd6c8f89542f6ebc
