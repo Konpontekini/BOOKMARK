@@ -45,9 +45,9 @@
   <div class="row row-width">
     <div class="sidebar col-2">
       <%= link_to "All", items_path, class: "btn btn-category #{"active" unless params[:filter]}" %>
-      <a class="btn btn-category">Purchased</a>
+      <%= link_to "Purchased", items_path(filter: :purchased) %>
       <% @categories.each do |category| %>
-        <%= link_to category.capitalize, items_path(sort: params[:sort], query: params[:query], filter: category), class: "btn btn-category #{"active" if params[:filter] == category }" %>
+        <%= link_to category.capitalize, items_path(sort: params[:sort], query: params[:query], filter: category,), class: "btn btn-category #{"active" if params[:filter] == category }" %>
       <% end %>
     </div>
 
@@ -112,6 +112,8 @@
 
         <div class="card-body">
           <h5 class="card-title"><%= item.name.truncate(24) %></h5>
+          <h5 class="card-title"><%= item.id %></h5>
+           <h5 class="card-title"><%= item.purchased %></h5>
           <p class="card-price"><%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{'%.2f' % (item.original_price.to_f/100).to_s}" : ""%></s> </p>
           <div class="card-category">
             <i class="fas fa-tags"></i>
@@ -130,9 +132,9 @@
           <%# <%= link_to 'Change category', edit_item_path(item), class: "btn btn-dark btn-sm" %>
           <%= link_to 'Modify', edit_item_path(item), class: "fas fa-pencil-alt" %>
           <%# // End of change button %>
-
+          <%= link_to 'Purchased', purchased_item_path(item), method: :patch, data: { confirm: 'Are you sure?' }, class: "fas fa-pencil-alt" %>
           <%# // The Buy button starts here %>
-          <button type="button" class="btn btn-buy" data-toggle="modal" data-target="#exampleModal2">
+          <%# <button type="button" class="btn btn-buy" data-toggle="modal" data-target="#exampleModal2">
             Buy</button>
             <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
               <div class="modal-dialog" role="document">
@@ -146,15 +148,15 @@
                   <div class="modal-body">
                     <%# ** Thank you for your purchase ** <p></p><p>
                     Your item is on it's way.</p> %>
-                    <button type="button" class="btn btn-confirm-yes" data-dismiss="modal">Confirmed</button>
-                    <button type="button" class="btn btn-confirm-no" data-dismiss="modal">Not yet</button>
-                  </div>
+                    <%# <%= link_to "Confirmed", purchased_item_path(item.id), method: :patch, class:"btn btn-confirm-yes" %>
+                    <%# <button type="button" class="btn btn-confirm-no" data-dismiss="modal">Not yet</button> %>
+                  <%# </div>
                   <div class="modal-footer purchase-confirm">
                     <button type="button" class="btn btn-back" data-dismiss="modal">Back</button>
                   </div>
-                </div>
-              </div>
-            </div>
+                </div> %>
+              <%# </div>
+            </div> %>
           </div>
         </div>
       <% end %>

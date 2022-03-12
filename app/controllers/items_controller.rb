@@ -2,19 +2,27 @@ require 'pry'
 require 'open-uri'
 require 'nokogiri'
 class ItemsController < ApplicationController
-  before_action :find_item, only: [:update, :edit, :show, :destroy, :category]
+  before_action :find_item, only: [:update, :edit, :show, :destroy, :category, :purchased]
   before_action :scrape, only: [:create]
 
   def index
     @categories = Category::CATEGORIES
     if params[:sort].present?
       @items = Item.all.order(params[:sort])
+    elsif params[:purchased].present?
+    raise
+      @items = Item.where(purchased: true)
+
     elsif params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
       @items = Item.where(sql_query, query: "%#{params[:query]}%")
     elsif params[:filter].present?
-      category = Category.find_by(name: params[:filter])
-      @items = Item.where(category: category)
+      if params[:filter] == "purchased"
+        @items = Item.where(purchased: true)
+      else
+        category = Category.find_by(name: params[:filter])
+        @items = Item.where(category: category)
+      end
     else
       @items = Item.all
     end
@@ -44,10 +52,6 @@ class ItemsController < ApplicationController
   def edit
   end
 
-  def purchased
-    @item.purchased? == true
-  end
-
   def update
     if @item.update(item_params)
       # redirect_to item_path(@item)
@@ -59,6 +63,14 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
+    redirect_to items_path
+  end
+
+  def purchased
+
+    @item.update(purchased: true)
+    @item.save!
+
     redirect_to items_path
   end
 
