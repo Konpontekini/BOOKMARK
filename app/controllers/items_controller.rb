@@ -10,9 +10,7 @@ class ItemsController < ApplicationController
     if params[:sort].present?
       @items = Item.all.order(params[:sort])
     elsif params[:purchased].present?
-    raise
       @items = Item.where(purchased: true)
-
     elsif params[:query].present?
       sql_query = "name ILIKE :query OR description ILIKE :query"
       @items = Item.where(sql_query, query: "%#{params[:query]}%")

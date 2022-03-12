@@ -91,6 +91,24 @@
   }
 }
 
+.fa.fa-shopping-cart {
+  font-size: 16px;
+  border-radius: 3px;
+  padding: 2.5px 10px;
+  margin: 0 5px 5px 0;
+  color: $charcol;
+  opacity: 0.5;
+  user-select: none;
+  text-decoration: none;
+
+  &:hover {
+    color: $charcol;
+    opacity: 1;
+    text-decoration: none;
+  }
+
+}
+
 .fas.fa-pencil-alt {
   font-size: 16px;
   border-radius: 3px;
@@ -100,7 +118,7 @@
   opacity: 0.5;
   user-select: none;
   text-decoration: none;
-  
+
   &:hover {
     color: $charcol;
     opacity: 1;
@@ -123,35 +141,35 @@
 //       opacity: 1;
 //     }
 // }
-    
+
 // // Smallest device
 // @media (min-width: 100px) and (max-width: 575px) {
 //     .item-cards {
 //       grid-template-columns: 1fr;
 //     }
 //   }
-  
+
 //   // Small devices (landscape phones, 576px and up)
 // @media (min-width: 576px) {
 //     .item-cards {
 //       grid-template-columns: 1fr;
 //     }
 //   }
-  
+
 //   // Medium devices (tablets, 768px and up)
 //   @media (min-width: 768px) {
 //     .item-cards {
 //       grid-template-columns: 1fr 1fr;
 //     }
 //   }
-  
+
 //   // Large devices (desktops, 992px and up)
 //   @media (min-width: 992px) {
 //     .item-cards {
 //       grid-template-columns: 1fr 1fr 1fr;
 //     }
 //   }
-  
+
 //   // Extra large devices (large desktops, 1200px and up)
 //   @media (min-width: 1200px) {
 //     .item-cards {
