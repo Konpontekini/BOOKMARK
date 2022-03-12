@@ -1,18 +1,129 @@
 .item-cards {
   display: grid;
   padding-right: 100px;
-  padding-left: 50px;
-  // grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-  padding: 1px 16px;
+  margin-top: 10px;
+  grid-gap: 20px;
+  padding: 1px 20px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-    
+
 .item-card {
-  margin: 4px;
-  // width: 200px
+  width: 300px;
 }
 
+.item-image {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+// .item-image:hover .item-image-overlay {
+//   background-color: black;
+//   opacity: 1;
+// }
+
+.card-body {
+  padding: 0;
+  h5 {
+    font-size: 22px;
+  }
+  p {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.card-body:hover + .fa-trash-alt{
+  display: block;
+  }
+
+.card-title {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 250px;
+}
+
+.card-footer {
+  background-color: white;
+  border-bottom: solid 2px lightgrey;
+  border-top: solid 2px lightgrey;
+  padding: 10px 0;
+  // font-family: "Cormorant Garamond", "Helvetica", "serif";
+}
+
+.card-category {
+  display:flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 5px;
+}
+
+.fas.fa-tags {
+  font-size: 16px;
+  display: inline-block;
+  border-radius: 3px;
+  padding-top: 10px;
+  padding-right: 5px;
+  // margin: 0 5px 5px 0;
+  color: $charcol;
+  opacity: 0.5;
+  cursor: default;
+  user-select: none;
+}
+
+.fa.fa-trash-alt {
+  font-size: 16px;
+  border-radius: 3px;
+  padding: 2.5px 10px;
+  margin: 0 5px 5px 0;
+  color: $charcol;
+  opacity: 0.5;
+  user-select: none;
+  text-decoration: none;
+
+  &:hover {
+    color: $charcol;
+    opacity: 1;
+    text-decoration: none;
+  }
+}
+
+.fas.fa-pencil-alt {
+  font-size: 16px;
+  border-radius: 3px;
+  padding: 2.5px 10px;
+  margin: 0 5px 5px 0;
+  color: $charcol;
+  opacity: 0.5;
+  user-select: none;
+  text-decoration: none;
+  
+  &:hover {
+    color: $charcol;
+    opacity: 1;
+    text-decoration: none;
+  }
+}
+
+// .fa-tag {
+//   font-size: 10px;
+//   display: inline-block;
+//   border-radius: 3px;
+//   padding: 2.5px 10px;
+//   margin: 0 5px 5px 0;
+//   color: $charcol;
+//   opacity: 0.3;
+//   cursor: default;
+//   user-select: none;
+//     &:hover {
+//       color: $charcol;
+//       opacity: 1;
+//     }
+// }
+    
 // // Smallest device
 // @media (min-width: 100px) and (max-width: 575px) {
 //     .item-cards {

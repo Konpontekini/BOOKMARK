@@ -1,7 +1,7 @@
 .btn-ghost-search {
     color: $charcol;
     padding: 0px 12px;
-    font-weight: lighter;
+    // font-weight: lighter;
     opacity: 0.6;
     transition: opacity 0.3s ease;
 
@@ -13,11 +13,43 @@
 
   .btn-ghost-item {
     background-color: #1A1A1A;
-    color: #9F8972;
+    color: lightgrey;
+    width: 100px;
+    height: 35px;
+
+    &:hover {
+      color: $dark-pink;
+    }
   }
 
+.button-more {
+  background-color: rgba(255,255,255,.7);
+  width: 100%;
+  min-width: 40px;
+  color: $charcol;
+  padding: 8px;
+  width: 100%;
+  padding-left: 5px;
+  font-size: 20px;
+  line-height: 30px;
+  border: solid 2px lightgrey;
+  display: hidden !important;
+  // opacity: 0;
+    
+    // &:hover {
+    //   display: block;
+    //   transform: translateY(100%);
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   transition: transform .2s, ease;
+    //   // transition: border-color .2s ease-in;
+    //   // box-shadow: .2s ease-in;
+    //   border: solid 2px $charcol;
+    // }
+}
 
-  .button, select {
+  .button.select {
     background-color: #1A1A1A;
     font-weight: lighter;
     border: 1px solid #E7E7E7;
@@ -25,4 +57,70 @@
     font-weight: 400;
     color: #9F8972;
     margin-right: 923px;
+  }
+
+  #purchase {
+    font-size: 24px;
+    font-weight: bold;
+    color: $charcol;
+  }
+
+  .btn.btn-buy {
+    background-color: $charcol;
+    color: lightgrey;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    font-size: 16px;
+    margin-left: 10px;
+    font-weight: bold;
+
+    &:hover {
+      color: $dark-pink;
+    }
+  }
+
+  .btn.btn-confirm-yes {
+    background-color: $charcol;
+    color: $pale-grey;
+    margin-left: 100px;
+    width: 120px;
+    font-size: 18px;
+
+    &:hover {
+      color: $dark-pink;
+    }
+  }
+
+  .btn.btn-confirm-no {
+    background-color: white;
+    color: $charcol;
+    border: solid 1px lightgrey;
+    font-size: 18px;
+    margin-left: 30px;
+    width: 120px;
+
+    &:hover {
+      border: solid 1px $charcol;
+    }
+  }
+
+  .btn.btn-back {
+    background-color: $charcol;
+    color: $pale-grey;
+    font-size: 18px;
+
+    &:hover {
+      color: $dark-pink;
+    }
+  }
+
+  .btn.btn-web {
+    background-color: $charcol;
+    color: $pale-grey;
+    font-size: 18px;
+
+    &:hover {
+      color: $dark-pink;
+    }
   }
