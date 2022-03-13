@@ -64,7 +64,6 @@ class ItemsController < ApplicationController
   def purchased
     @item.update(purchased: true)
     @item.save!
-
     redirect_to items_path
   end
 
