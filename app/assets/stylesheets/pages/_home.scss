@@ -274,7 +274,7 @@
 
 }
 
-.row{
+.row.home {
   background-color: $pale-grey;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -284,31 +284,28 @@
   padding-left: 50px;
 }
 
-.middle{
+.middle {
 padding-left: 0px;
 
 }
 
-.right{
+.right {
 margin-left: -20px;
 padding-top: 150px;
 
-h1 {
-  color: #9F8972;
+  h5 {
+  color: $charcol;
   // color:#eaeeed;
-  font-size: 60px;
+  font-size: 30px;
   font-family: Doyle,Garamond,Times,Serif;
   line-height: 1.166;
   font-weight: 200;
   display: block;
-
 }
 
-p{
+  p {
   font-size: 30px;
   color: $charcol;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
 }
 
