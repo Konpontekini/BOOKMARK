@@ -12,12 +12,6 @@
     padding-right: 120px;
     // padding: 70px 100px 100px 100px;
 
-  h1 {
-    color: #9F8972;
-    // color:#eaeeed;
-    font-size: 30px;
-    font-family: Gill Sans;
-  }
 
   h5 {
     color: $dark-pink;
@@ -25,14 +19,8 @@
     font-size: 20px;
     font-family: Gill Sans;
   }
-
-  p {
-    color: $dark-pink;
-    // color: #eaeeed;
-    font-size: 18px;
-    font-family: Gill Sans;
-  }
 }
+
 
 .tagline {
   padding-right: 0px;
@@ -103,7 +91,7 @@
   color: #1A1A1A;
   font-size: 16px;
   font-family: Gill Sans;
-  margin-left: -25px;
+  margin-left: 0px;
 
   &:hover {
     background-color: $charcol;
@@ -111,6 +99,11 @@
     color: $mid-pink;
     // border: none;
   }
+}
+
+.btn-login {
+  color: #1A1A1A;
+  text-decoration: none;
 }
 
 // Caroussel for homepage styling
@@ -251,4 +244,82 @@
   .container {
     width: 300px;
   }
+}
+
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 0px 0;
+  height: 620px;
+  width: 420px;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.hpg-content-container{
+
+}
+
+.row{
+  background-color: $pale-grey;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.left{
+  padding-left: 50px;
+}
+
+.middle{
+padding-left: 0px;
+
+}
+
+.right{
+margin-left: -20px;
+padding-top: 150px;
+
+h1 {
+  color: #9F8972;
+  // color:#eaeeed;
+  font-size: 60px;
+  font-family: Doyle,Garamond,Times,Serif;
+  line-height: 1.166;
+  font-weight: 200;
+  display: block;
+
+}
+
+p{
+  font-size: 30px;
+  color: $charcol;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
+
+
+h1 {
+  color: #9F8972;
+  // color:#eaeeed;
+  font-size: 60px;
+  font-family: Doyle,Garamond,Times,Serif;
+  line-height: 1.166;
+  font-weight: 200;
+  display: block;
+
 }
