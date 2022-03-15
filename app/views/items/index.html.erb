@@ -47,7 +47,7 @@
       <%= link_to "All (#{Item.count})", items_path, class: "btn btn-category #{"active" unless params[:filter]}" %>
       <%= link_to "Purchase (#{Item.where(purchased: true).count})", items_path(filter: :purchased), class: "purchase-text #{"active" if params[:purchased] = true }" %>
       <% @categories.each do |category| %>
-        <%= link_to "#{category.capitalize} (#{Item.where(category_id: Category.name).all.count})", items_path(sort: params[:sort], query: params[:query], filter: category,), class: "btn btn-category #{"active" if params[:filter] == category }" %>
+       <%= link_to "#{category.capitalize} (#{Item.where(category_id: Category.where(name: category).first).all.count})", items_path(sort: params[:sort], query: params[:query], filter: category,), class: "btn btn-category #{"active" if params[:filter] == category }" %>
       <% end %>
     </div>
 
