@@ -15,11 +15,15 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 30px;
-  border-radius: 60%;
+  width: 7%;
+  max-width: 7%;
+  height:7%;
+  max-height: 7%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0%;
   margin-left: 42px;
   // color: #9F8972;
-  size: 8px;
 }
 
 .nav-link {
