@@ -47,7 +47,7 @@
       <%= link_to "All (#{Item.count})", items_path, class: "btn btn-category #{"active" unless params[:filter]}" %>
       <%= link_to "Purchase (#{Item.where(purchased: true).count})", items_path(filter: :purchased), class: "purchase-text #{"active" if params[:purchased] = true }" %>
       <% @categories.each do |category| %>
-        <%= link_to "#{category.capitalize} (#{Item.all.count})", items_path(sort: params[:sort], query: params[:query], filter: category,), class: "btn btn-category #{"active" if params[:filter] == category }" %>
+        <%= link_to "#{category.capitalize} (#{Item.where(category_id: Category.name).all.count})", items_path(sort: params[:sort], query: params[:query], filter: category,), class: "btn btn-category #{"active" if params[:filter] == category }" %>
       <% end %>
     </div>
 
@@ -138,7 +138,12 @@
           <%# // End of change button %>
           <div class="purchase-button">
             <%# <i class="fa fa-shopping-cart"></i> %>
-            <i class="fa fa-shopping-cart"></i><%= link_to 'Purchased', purchased_item_path(item), method: :patch, data: { confirm: 'Please confirm your purchase' }, class: "text-purchase" %>
+            <% if item.purchased == false || item.purchased == nil %>
+            <i class="fa fa-shopping-cart"></i><%= link_to 'Purchase', purchased_item_path(item), method: :patch, data: { confirm: 'Please confirm your purchase' }, class: "text-purchase" %>
+            <% else %>
+            <i class="fa fa-shopping-cart"></i><%= link_to 'Unpurchase', unpurchased_item_path(item), method: :patch, data: { confirm: 'Please confirm your unpurchase' }, class: "text-purchase" %>
+            <% end %>
+
           </div>
           <%# // The Buy button starts here %>
           <%# <button type="button" class="btn btn-buy" data-toggle="modal" data-target="#exampleModal2">

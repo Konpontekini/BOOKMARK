@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     member do
       patch :purchased
     end
+    member do
+      patch :unpurchased
+    end
   end
   resources :categories
 end
