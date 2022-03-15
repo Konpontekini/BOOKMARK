@@ -2,7 +2,7 @@
   background-color: $charcol;
   font-family: "Cormorant Garamond", "Helvetica", "serif";
   color: $pale-grey;
-  
+
   &:hover {
     color: $dark-pink;
   }
@@ -79,7 +79,7 @@
   border-top: none;
   border-left: none;
   display: none;
-      
+
     &:hover {
       color: $dark-pink;
       font-weight: bold;
@@ -90,7 +90,7 @@
 .delete-button {
   display: flex;
   font-size: 14px;
-  
+
   .text-delete {
   color: $charcol;
   text-decoration: none;
@@ -187,4 +187,26 @@
   &:hover {
     color: $dark-pink;
   }
-}
+  }
+  .btn.btn-primary {
+    background: #1A1A1A;
+    border-radius: 4px;
+    color: #9F8972;
+
+    &:hover {
+      color: white;
+      transition: color 1s ease;
+    }
+  }
+
+  .btn.btn-ghost-new {
+    border: 3px;
+    border-color: #1A1A1A;
+    margin-left: 158px;
+  }
+
+  .btn.btn-ghost-edit {
+    border: 3px;
+    border-color: #1A1A1A;
+    margin-left: 401px;
+  }

@@ -1,6 +1,6 @@
 <div class="container-new">
   <div class="form-item-new">
-    <h1>Add item</h1>
+    <h1>Add Item</h1>
       <%= render "form", category: @category, item: @item %>
   </div>
 </div>
@@ -11,5 +11,4 @@
   <%# <%= f.submit class: 'btn btn-primary' %>
 <%# <% end %>
 
-
-<%= link_to "Back to item list", items_path %>
+<%=  link_to "Back to Item List", items_path, class: "btn btn-ghost-new" %>

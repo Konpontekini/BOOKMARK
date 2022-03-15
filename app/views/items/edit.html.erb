@@ -1,6 +1,6 @@
 <div class="container-edit">
   <div class="form-item-edit">
-    <h1>Change category</h1>
+    <h1>Change Category</h1>
       <%# <%= render "form", category: @category, item: @item %>
     <%= simple_form_for [@category, @item] do |f| %>
     <%= f.association :category %>
@@ -10,4 +10,4 @@
   </div>
 </div>
 
-<%= link_to "Back to item list", items_path %>
+<%= link_to "Back to item list", items_path, class: "btn btn-ghost-edit" %>
