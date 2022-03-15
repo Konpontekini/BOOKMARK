@@ -1,8 +1,5 @@
-require 'pry'
-require 'open-uri'
-require 'nokogiri'
 class ItemsController < ApplicationController
-  before_action :find_item, only: [:update, :edit, :show, :destroy, :category, :purchased]
+  before_action :find_item, only: %i[update edit show destroy category purchased]
   before_action :scrape, only: [:create]
 
   def index
@@ -65,23 +62,21 @@ class ItemsController < ApplicationController
   end
 
   def purchased
-
     @item.update(purchased: true)
     @item.save!
-
     redirect_to items_path
   end
 
-private
+  private
 
   def find_item
     @item = Item.find(params[:id])
   end
 
   def item_params
-    params.require(:item).permit(:category_id, :item_url, :sort, :name, :created_at, :price, :original_price, :purchased, :description)
+    params.require(:item).permit(:category_id, :item_url, :sort, :name, :created_at, :price, :original_price,
+                                 :purchased, :description)
   end
-
 
   def scrape
     @url = params[:item][:item_url]
@@ -92,17 +87,19 @@ private
       name = html_doc.search('.wt-text-body-03.wt-line-height-tight.wt-break-word').text.strip.split(/[.,\-]/).first
       description = html_doc.search("#product-details-content-toggle > div > ul").text.strip
       currency = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/[£€]/).to_s
-      price = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/\d+.\d{2}/).to_s.sub(".","").to_i
-      original_price = html_doc.search('.wt-text-strikethrough.wt-text-caption.wt-text-gray.wt-mr-xs-1').text.strip.match(/\d+.\d{2}/).to_s.sub(".","").to_i
+      price = html_doc.search('.wt-text-title-03.wt-mr-xs-2').text.strip.match(/\d+.\d{2}/).to_s.sub(".", "").to_i
+      original_price = html_doc.search('.wt-text-strikethrough.wt-text-caption.wt-text-gray.wt-mr-xs-1').text.strip.match(/\d+.\d{2}/).to_s.sub(
+        ".", ""
+      ).to_i
       elements = []
       html_doc.search('.wt-max-width-full.wt-horizontal-center.wt-vertical-center.carousel-image.wt-rounded').first(3).each do |element|
         image = element["data-src-zoom-image"]
         elements << image
       end
-       image_url = elements
-       #ignore
+      image_url = elements
+      # ignore
 
-       @attributes = {
+      @attributes = {
         name: name,
         item_url: @url,
         price: price,
@@ -125,20 +122,25 @@ private
       if html_doc.search('.price-box .special-price .price').present?
         currency = html_doc.search('.price-box .special-price .price').text.strip.match(/[£€]/).to_s
       else
-      currency = html_doc.search('.price-box .regular-price .price').text.strip.match(/[£€]/).to_s
+        currency = html_doc.search('.price-box .regular-price .price').text.strip.match(/[£€]/).to_s
       end
       if html_doc.search('.price-box .special-price .price').present?
-        price = html_doc.search('.price-box .special-price .price').first.text.strip.chars.select {|x| x.to_i.to_s == x}.join.to_i*100
+        price = html_doc.search('.price-box .special-price .price').first.text.strip.chars.select do |x|
+          x.to_i.to_s == x
+        end.join.to_i * 100
       else
-        price = html_doc.search('.price-box .regular-price .price').first.text.strip.chars.select {|x| x.to_i.to_s == x}.join.to_i*100
+        price = html_doc.search('.price-box .regular-price .price').first.text.strip.chars.select do |x|
+          x.to_i.to_s == x
+        end.join.to_i * 100
       end
       if html_doc.search('.price-box .old-price .price').present?
-        original_price = html_doc.search('.price-box .old-price .price').first.text.strip.chars.select {|x| x.to_i.to_s == x}.join.to_i*100
-      else
+        original_price = html_doc.search('.price-box .old-price .price').first.text.strip.chars.select do |x|
+          x.to_i.to_s == x
+        end.join.to_i * 100
       end
       elements = []
       html_doc.search('.gallery-image').first(3).each do |element|
-        image = "https:#{element["src"]}"
+        image = "https:#{element['src']}"
         elements << image
       end
       image_url = elements
@@ -149,7 +151,7 @@ private
           item_url: @url,
           price: original_price,
           description: description,
-          image_url: image_url,
+          image_url: image_url
           # original_price: original_price
         }
       else

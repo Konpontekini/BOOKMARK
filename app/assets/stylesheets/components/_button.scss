@@ -1,126 +1,190 @@
+.btn-session {
+  background-color: $charcol;
+  font-family: "Cormorant Garamond", "Helvetica", "serif";
+  color: $pale-grey;
+  
+  &:hover {
+    color: $dark-pink;
+  }
+}
+
 .btn-ghost-search {
     color: $charcol;
-    padding: 0px 12px;
-    // font-weight: lighter;
+    padding: 0px 8px;
     opacity: 0.6;
     transition: opacity 0.3s ease;
 
-  }
-
-  .btn-ghost-search:hover {
-    opacity: 1;
-  }
-
-  .btn-ghost-item {
-    background-color: #1A1A1A;
-    color: lightgrey;
-    width: 100px;
-    height: 35px;
-
     &:hover {
-      color: $dark-pink;
+      opacity: 1;
     }
   }
 
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+}
+
+#sort {
+  background-color: white;
+  width: 150px;
+  height: 30px;
+  // font-weight: lighter;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+  font-size: 16px;
+  font-family: "Cormorant Garamond", "Helvetica", "serif";
+  color: grey;
+  // margin-right: 923px;
+}
+
+#query {
+  font-size: 16px;
+  width: 225px;
+  height: 30px;
+}
+
+.btn-ghost-item {
+  background-color: #1A1A1A;
+  color: lightgrey;
+  width: 100px;
+  height: 30px;
+  padding: 2px 0 0 0;
+
+  &:hover {
+    color: $dark-pink;
+  }
+}
+
+.item-image-overlay {
+  background-color: white;
+  // transition: transform 0.3s ease;
+  // transform: translateY(100%);
+}
+
 .button-more {
-  background-color: rgba(255,255,255,.7);
+  padding: 2px 8px;
+  background-color: white;
+  // margin-top: -35px;
   width: 100%;
   min-width: 40px;
   color: $charcol;
-  padding: 8px;
   width: 100%;
-  padding-left: 5px;
-  font-size: 20px;
-  line-height: 30px;
-  border: solid 2px lightgrey;
-  // display: hidden !important;
-  // opacity: 0;
-    
-    // &:hover {
-    //   display: block;
-    //   transform: translateY(100%);
-    //   position: absolute;
-    //   bottom: 0;
-    //   left: 0;
-    //   transition: transform .2s, ease;
-    //   // transition: border-color .2s ease-in;
-    //   // box-shadow: .2s ease-in;
-    //   border: solid 2px $charcol;
-    // }
+  // padding-left: 5px;
+  font-size: 16px;
+  line-height: 25px;
+  border-bottom: solid 1px lightgrey;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  display: none;
+      
+    &:hover {
+      color: $dark-pink;
+      font-weight: bold;
+      // border: solid 2px $charcol;
+    }
 }
 
-  .button.select {
-    background-color: #1A1A1A;
-    font-weight: lighter;
-    border: 1px solid #E7E7E7;
-    border-radius: 4px;
-    font-weight: 400;
-    color: #9F8972;
-    margin-right: 923px;
-  }
-
-  #purchase {
-    font-size: 24px;
+.delete-button {
+  display: flex;
+  font-size: 14px;
+  
+  .text-delete {
+  color: $charcol;
+  text-decoration: none;
+  &:hover {
+    color: $dark-pink;
     font-weight: bold;
-    color: $charcol;
   }
+  }
+}
 
-  .btn.btn-buy {
-    background-color: $charcol;
-    color: lightgrey;
-    width: 100px;
-    height: 35px;
-    text-align: center;
-    font-size: 16px;
-    margin-left: 10px;
+.modify-button {
+  display: flex;
+  font-size: 14px;
+  .text-modify {
+    color: $charcol;
+    text-decoration: none;
+    &:hover {
+      color: $dark-pink;
+      font-weight: bold;
+    }
+    }
+}
+
+.purchase-button {
+  padding-left: 4px;
+  font-size: 14px;
+
+  .text-purchase {
+    padding-left: 1px;
+    color: $charcol;
+  text-decoration: none;
+  &:hover {
+    color: $dark-pink;
     font-weight: bold;
-
-    &:hover {
-      color: $dark-pink;
-    }
   }
-
-  .btn.btn-confirm-yes {
-    background-color: $charcol;
-    color: $pale-grey;
-    margin-left: 100px;
-    width: 120px;
-    font-size: 18px;
-
-    &:hover {
-      color: $dark-pink;
-    }
   }
+}
 
-  .btn.btn-confirm-no {
-    background-color: white;
-    color: $charcol;
-    border: solid 1px lightgrey;
-    font-size: 18px;
-    margin-left: 30px;
-    width: 120px;
+// .btn.btn-buy {
+//   background-color: $charcol;
+//   color: lightgrey;
+//   width: 100px;
+//   height: 35px;
+//   text-align: center;
+//   font-size: 16px;
+//   margin-left: 10px;
+//   font-weight: bold;
 
-    &:hover {
-      border: solid 1px $charcol;
-    }
+//   &:hover {
+//     color: $dark-pink;
+//   }
+// }
+
+// .btn.btn-confirm-yes {
+//   background-color: $charcol;
+//   color: $pale-grey;
+//   margin-left: 100px;
+//   width: 120px;
+//   font-size: 18px;
+
+//   &:hover {
+//     color: $dark-pink;
+//   }
+// }
+
+// .btn.btn-confirm-no {
+//   background-color: white;
+//   color: $charcol;
+//   border: solid 1px lightgrey;
+//   font-size: 18px;
+//   margin-left: 30px;
+//   width: 120px;
+
+//   &:hover {
+//     border: solid 1px $charcol;
+//   }
+// }
+
+.btn.btn-back {
+  background-color: $charcol;
+  color: $pale-grey;
+  font-size: 16px;
+
+  &:hover {
+    color: $dark-pink;
   }
+}
 
-  .btn.btn-back {
-    background-color: $charcol;
-    color: $pale-grey;
-    font-size: 18px;
+.btn.btn-web {
+  background-color: $charcol;
+  color: $pale-grey;
+  font-size: 16px;
 
-    &:hover {
-      color: $dark-pink;
-    }
+  &:hover {
+    color: $dark-pink;
   }
-
-  .btn.btn-web {
-    background-color: $charcol;
-    color: $pale-grey;
-    font-size: 18px;
-
-    &:hover {
-      color: $dark-pink;
-    }
-  }
+}
