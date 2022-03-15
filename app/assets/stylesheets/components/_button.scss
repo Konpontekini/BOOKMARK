@@ -2,7 +2,7 @@
   background-color: $charcol;
   font-family: "Cormorant Garamond", "Helvetica", "serif";
   color: $pale-grey;
-  
+
   &:hover {
     color: $dark-pink;
   }
@@ -71,24 +71,6 @@
   min-width: 40px;
   color: $charcol;
   width: 100%;
-<<<<<<< HEAD
-  padding-left: 5px;
-  font-size: 20px;
-  line-height: 30px;
-  border: solid 2px lightgrey;
-  // display: hidden;
-
-  //   &:hover {
-  //     transform: translateY(100%);
-  //     position: absolute;
-  //     bottom: 0;
-  //     left: 0;
-  //     transition: transform .2s, ease;
-  //     // transition: border-color .2s ease-in;
-  //     // box-shadow: .2s ease-in;
-  //     border: solid 2px $charcol;
-  //   }
-=======
   // padding-left: 5px;
   font-size: 16px;
   line-height: 25px;
@@ -97,19 +79,18 @@
   border-top: none;
   border-left: none;
   display: none;
-      
+
     &:hover {
       color: $dark-pink;
       font-weight: bold;
       // border: solid 2px $charcol;
     }
->>>>>>> b1d7b85cde6522c4aa0a206f0a099013e616f868
 }
 
 .delete-button {
   display: flex;
   font-size: 14px;
-  
+
   .text-delete {
   color: $charcol;
   text-decoration: none;
@@ -206,8 +187,7 @@
   &:hover {
     color: $dark-pink;
   }
-<<<<<<< HEAD
-
+  }
   .btn.btn-primary {
     background: #1A1A1A;
     border-radius: 4px;
@@ -218,6 +198,15 @@
       transition: color 1s ease;
     }
   }
-=======
-}
->>>>>>> b1d7b85cde6522c4aa0a206f0a099013e616f868
+
+  .btn.btn-ghost-new {
+    border: 3px;
+    border-color: #1A1A1A;
+    margin-left: 158px;
+  }
+
+  .btn.btn-ghost-edit {
+    border: 3px;
+    border-color: #1A1A1A;
+    margin-left: 401px;
+  }
