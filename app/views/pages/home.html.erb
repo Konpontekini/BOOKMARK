@@ -1,24 +1,56 @@
 <div class="hpg-content-container">
   <div class="row home row-width">
       <div class="left col-4">
-        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dajifvnn5/image/upload/v1645110270/Shopping_screen_mxaypo.jpg);">
+        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dajifvnn5/image/upload/v1647190865/heidi-fin-2TLREZi7BUg-unsplash_peszmk.jpg);">
         </div>
       </div>
       <div class="middle col-4">
-        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( https://res.cloudinary.com/dajifvnn5/image/upload/v1647190865/heidi-fin-2TLREZi7BUg-unsplash_peszmk.jpg);">
+        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/dajifvnn5/image/upload/v1645110270/Shopping_screen_mxaypo.jpg);">
         </div>
       </div>
       <div class="right col-4">
           <h1>Get right to <br>the stuff you want</h1>
-          <br>
           <h5>Create your own private shopping gallery with all the items you like</h5>
-          <br>
-          <%= link_to "Get Started", items_path, class:"btn btn-outline-secondary btn-start" %>
-          <br>
-          <p>Already have an account? <%= link_to "Log in", items_path, class:"btn-login" %></p>
+          <% if user_signed_in? %>
+            <%= link_to "My bookmarks", items_path, class:"btn btn-bookmark" %>
+          <% else %>
+            <%= link_to "Get started", new_user_registration_path, class:"btn btn-start" %>
+            <p>Already have an account? <%= link_to "Log in", new_user_session_path, class:"btn-login" %></p>
+          <% end %>
       </div>
   </div>
 </div>
+
+<div class="block-container">
+  <%# <div class="row block-row"> %>
+    <h3 class="block-title">With BOOKMARK</h3>
+    <div class="block-cards">
+      <div class="block-card">
+        <div class="block-card-content">
+          <img src="https://res.cloudinary.com/dajifvnn5/image/upload/c_scale,w_56/v1647350327/laptop_cow5lt.png" class="block-card-image">
+          <h5>Save items across different websites</h5>
+        </div>
+      </div>
+      <div class="block-card">
+        <div class="block-card-content">
+          <img src="https://res.cloudinary.com/dajifvnn5/image/upload/c_scale,w_56/v1647350576/tag_qvhtsl.png" class="block-card-image">
+          <h5>Compare similar items</h5>
+        </div>
+      </div>
+      <div class="block-card">
+        <div class="block-card-content">
+          <img src="https://res.cloudinary.com/dajifvnn5/image/upload/c_scale,w_56/v1647350380/internet_itb7hb.png" class="block-card-image">
+          <h5>Find the best deal</h5>
+        </div>
+      </div>
+      <div class="block-card">
+        <div class="block-card-content">
+          <img src="https://res.cloudinary.com/dajifvnn5/image/upload/c_scale,w_56/v1647349843/team_qqasyr.png" class="block-card-image">
+          <h5>Share with friends and families</h5>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <%# <div class="home-container">
