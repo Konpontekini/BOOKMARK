@@ -1,0 +1,25 @@
+.session-container {
+    background-color: $light-pink;
+}
+
+.session-content {
+    padding: 20px 400px;
+}
+
+.form-actions {
+    padding-left: 0;
+}
+
+.session-footer {
+    margin-top: 10px;
+}
+
+.session-text {
+  text-decoration: none;
+  color: $charcol;
+
+  &:hover {
+      color: $dark-pink;
+      text-decoration: none;
+  }
+}

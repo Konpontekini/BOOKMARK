@@ -1,20 +1,24 @@
 .item-cards {
   display: grid;
-  padding-right: 100px;
+  padding-right: 30px;
   margin-top: 10px;
-  grid-gap: 20px;
-  padding: 1px 20px;
+  grid-gap: 16px;
+  padding-left: 40px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .item-card {
-  width: 300px;
+  width: 200px;
 }
 
 .item-image {
-  height: 300px;
+  height: 200px;
   width: 100%;
   object-fit: cover;
+}
+
+.item-description {
+  padding-top: 40px;
 }
 
 // .item-image:hover .item-image-overlay {
@@ -24,11 +28,12 @@
 
 .card-body {
   padding: 0;
+  // border-bottom: solid 2px lightgrey;
   h5 {
-    font-size: 22px;
+    font-size: 18px;
   }
   p {
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 0;
   }
 }
@@ -48,10 +53,12 @@
 
 .card-footer {
   background-color: white;
-  border-bottom: solid 2px lightgrey;
-  border-top: solid 2px lightgrey;
+  border-bottom: solid 1px lightgrey;
+  border-top: solid 1px lightgrey;
   padding: 10px 0;
+  display: flex;
   // font-family: "Cormorant Garamond", "Helvetica", "serif";
+  // display: none;
 }
 
 .card-category {
@@ -62,12 +69,12 @@
 }
 
 .fas.fa-tags {
-  font-size: 16px;
+  // font-size: 12px;
   display: inline-block;
   border-radius: 3px;
   padding-top: 10px;
-  padding-right: 5px;
-  // margin: 0 5px 5px 0;
+  padding: 2px 2px;
+  margin: 5px 5px 5px 0;
   color: $charcol;
   opacity: 0.5;
   cursor: default;
@@ -75,86 +82,88 @@
 }
 
 .fa.fa-trash-alt {
-  font-size: 16px;
-  border-radius: 3px;
-  padding: 2.5px 10px;
-  margin: 0 5px 5px 0;
+  // font-size: 12px;
+  // border-radius: 3px;
+  padding: 2px 2px;
+  // margin: 0 5px 5px 0;
   color: $charcol;
   opacity: 0.5;
   user-select: none;
   text-decoration: none;
 
-  &:hover {
-    color: $charcol;
-    opacity: 1;
-    text-decoration: none;
-  }
+  // &:hover {
+  //   color: $dark-pink;
+  //   opacity: 1;
+  //   text-decoration: none;
+  // }
+}
+
+.fa.fa-shopping-cart {
+  // font-size: 12px;
+  // border-radius: 3px;
+  padding: 2px 2px;
+  // margin: 0 5px 5px 0;
+  color: $charcol;
+  opacity: 0.5;
+  user-select: none;
+  text-decoration: none;
+
+  // &:hover {
+  //   color: $dark-pink;
+  //   opacity: 1;
+  //   text-decoration: none;
+  // }
+
 }
 
 .fas.fa-pencil-alt {
-  font-size: 16px;
-  border-radius: 3px;
-  padding: 2.5px 10px;
-  margin: 0 5px 5px 0;
+  // font-size: 12px;
+  // border-radius: 3px;
+  padding: 2.5px 5px;
+  // margin: 0 5px 5px 0;
   color: $charcol;
   opacity: 0.5;
   user-select: none;
   text-decoration: none;
-  
-  &:hover {
-    color: $charcol;
-    opacity: 1;
-    text-decoration: none;
-  }
+
+  // &:hover {
+  //   color: $dark-pink;
+  //   opacity: 1;
+  //   text-decoration: none;
+  // }
 }
 
-// .fa-tag {
-//   font-size: 10px;
-//   display: inline-block;
-//   border-radius: 3px;
-//   padding: 2.5px 10px;
-//   margin: 0 5px 5px 0;
-//   color: $charcol;
-//   opacity: 0.3;
-//   cursor: default;
-//   user-select: none;
-//     &:hover {
-//       color: $charcol;
-//       opacity: 1;
-//     }
-// }
-    
-// // Smallest device
-// @media (min-width: 100px) and (max-width: 575px) {
-//     .item-cards {
-//       grid-template-columns: 1fr;
-//     }
-//   }
-  
-//   // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
-//     .item-cards {
-//       grid-template-columns: 1fr;
-//     }
-//   }
-  
-//   // Medium devices (tablets, 768px and up)
-//   @media (min-width: 768px) {
-//     .item-cards {
-//       grid-template-columns: 1fr 1fr;
-//     }
-//   }
-  
-//   // Large devices (desktops, 992px and up)
-//   @media (min-width: 992px) {
-//     .item-cards {
-//       grid-template-columns: 1fr 1fr 1fr;
-//     }
-//   }
-  
-//   // Extra large devices (large desktops, 1200px and up)
-//   @media (min-width: 1200px) {
-//     .item-cards {
-//       grid-template-columns: 1fr 1fr 1fr 1fr;
-//     }
-//   }
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+    .item-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .item-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    .item-cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .item-cards {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    .item-cards {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
