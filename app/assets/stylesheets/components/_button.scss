@@ -2,7 +2,7 @@
   background-color: $charcol;
   font-family: "Cormorant Garamond", "Helvetica", "serif";
   color: $pale-grey;
-  
+
   &:hover {
     color: $dark-pink;
   }
@@ -79,7 +79,7 @@
   border-top: none;
   border-left: none;
   display: none;
-      
+
     &:hover {
       color: $dark-pink;
       font-weight: bold;
@@ -90,7 +90,7 @@
 .delete-button {
   display: flex;
   font-size: 14px;
-  
+
   .text-delete {
   color: $charcol;
   text-decoration: none;
@@ -122,6 +122,7 @@
     padding-left: 1px;
     color: $charcol;
   text-decoration: none;
+  padding-right: 4px;
   &:hover {
     color: $dark-pink;
     font-weight: bold;

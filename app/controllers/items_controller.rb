@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :find_item, only: %i[update edit show destroy category purchased]
+  before_action :find_item, only: %i[update edit show destroy category purchased unpurchased]
   before_action :scrape, only: [:create]
 
   def index
@@ -66,6 +66,13 @@ class ItemsController < ApplicationController
     @item.save!
     redirect_to items_path
   end
+
+  def unpurchased
+    @item.update(purchased: false)
+    @item.save!
+    redirect_to items_path
+  end
+
 
   private
 
