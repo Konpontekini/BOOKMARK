@@ -1,3 +1,13 @@
+.btn-session {
+  background-color: $charcol;
+  font-family: "Cormorant Garamond", "Helvetica", "serif";
+  color: $pale-grey;
+  
+  &:hover {
+    color: $dark-pink;
+  }
+}
+
 .btn-ghost-search {
     color: $charcol;
     padding: 0px 8px;
@@ -49,6 +59,8 @@
 
 .item-image-overlay {
   background-color: white;
+  // transition: transform 0.3s ease;
+  // transform: translateY(100%);
 }
 
 .button-more {
