@@ -21,16 +21,12 @@
   padding-top: 40px;
 }
 
-// .item-image:hover .item-image-overlay {
-//   background-color: black;
-//   opacity: 1;
-// }
 
 .card-body {
   padding: 0;
   // border-bottom: solid 2px lightgrey;
   h5 {
-    font-size: 18px;
+    font-size: 20px;
   }
   p {
     font-size: 16px;
@@ -85,17 +81,15 @@
   // font-size: 12px;
   // border-radius: 3px;
   padding: 2px 2px;
-  // margin: 0 5px 5px 0;
+  // margin-left: 10px;
   color: $charcol;
   opacity: 0.5;
   user-select: none;
   text-decoration: none;
-
-  // &:hover {
-  //   color: $dark-pink;
-  //   opacity: 1;
-  //   text-decoration: none;
-  // }
+   &:hover {
+     color: $dark-pink;
+     opacity: 1;
+   }
 }
 
 .fa.fa-shopping-cart {
@@ -107,30 +101,21 @@
   opacity: 0.5;
   user-select: none;
   text-decoration: none;
-
-  // &:hover {
-  //   color: $dark-pink;
-  //   opacity: 1;
-  //   text-decoration: none;
-  // }
-
 }
 
 .fas.fa-pencil-alt {
   // font-size: 12px;
   // border-radius: 3px;
   padding: 2.5px 5px;
-  // margin: 0 5px 5px 0;
+  margin-left: 10px;
   color: $charcol;
   opacity: 0.5;
   user-select: none;
   text-decoration: none;
-
-  // &:hover {
-  //   color: $dark-pink;
-  //   opacity: 1;
-  //   text-decoration: none;
-  // }
+    &:hover {
+    color: $dark-pink;
+    opacity: 1;
+  }
 }
 
 // Smallest device

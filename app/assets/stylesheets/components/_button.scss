@@ -61,29 +61,30 @@
   background-color: white;
   // transition: transform 0.3s ease;
   // transform: translateY(100%);
+  margin-top: -33px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 40px;
 }
 
 .button-more {
   padding: 2px 8px;
   background-color: white;
-  // margin-top: -35px;
-  width: 100%;
   min-width: 40px;
   color: $charcol;
   width: 100%;
-  // padding-left: 5px;
-  font-size: 16px;
-  line-height: 25px;
+  font-size: 18px;
+  line-height: 28px;
   border-bottom: solid 1px lightgrey;
   border-right: none;
   border-top: none;
   border-left: none;
-  display: none;
 
     &:hover {
       color: $dark-pink;
       font-weight: bold;
-      // border: solid 2px $charcol;
     }
 }
 
@@ -114,19 +115,37 @@
     }
 }
 
-.purchase-button {
-  padding-left: 4px;
-  font-size: 14px;
+.purchase-confirm {
+  margin-left: 85px;
+  font-size: 12px;
+  font-family:  "Cormorant Garamond", "Helvetica", "serif"; 
+}
 
-  .text-purchase {
-    padding-left: 1px;
-    color: $charcol;
+.btn.btn-buy {
+  padding-top: 0;
+  font-size: 14px;
+  width: 80px;
+  height: 25px;
+  background-color: $charcol;
+  color: $pale-grey;
   text-decoration: none;
-  padding-right: 4px;
+  // padding-right: 4px;
   &:hover {
     color: $dark-pink;
-    font-weight: bold;
   }
+}
+
+.btn.btn-bought {
+  padding-top: 0;
+  font-size: 14px;
+  width: 80px;
+  height: 25px;
+  background-color: $charcol;
+  color: $dark-pink;
+  text-decoration: none;
+  // padding-right: 4px;
+  &:hover {
+    color: $pale-grey;
   }
 }
 
@@ -189,25 +208,32 @@
     color: $dark-pink;
   }
   }
+
   .btn.btn-primary {
-    background: #1A1A1A;
+    background-color: $charcol;
     border-radius: 4px;
-    color: #9F8972;
+    color: $pale-grey;
+    border: none;
 
     &:hover {
-      color: white;
+      color: $dark-pink;
       transition: color 1s ease;
     }
   }
 
   .btn.btn-ghost-new {
-    border: 3px;
-    border-color: #1A1A1A;
+    color: $charcol;
     margin-left: 400px;
+    &:hover {
+      color: $dark-pink;
+    }
   }
 
   .btn.btn-ghost-edit {
-    border: 3px;
-    border-color: #1A1A1A;
+    color: $charcol;
     margin-left: 400px;
+    font-size: 16px;
+    &:hover {
+      color: $dark-pink;
+    }
   }
