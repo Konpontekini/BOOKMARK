@@ -47,7 +47,7 @@
       <%= link_to "All (#{Item.count})", items_path, class: "btn btn-category #{"active" unless params[:filter]}" %>
       <%= link_to "Purchase (#{Item.where(purchased: true).count})", items_path(filter: :purchased), class: "purchase-text #{"active" if params[:purchased] = true }" %>
       <% @categories.each do |category| %>
-       <%= link_to "#{category.capitalize} (#{Item.where(category_id: Category.where(name: category).first).count})", items_path(sort: params[:sort], query: params[:query], filter: category,), class: "btn btn-category #{"active" if params[:filter] == category }" %>
+       <%= link_to "#{category.capitalize} (#{Item.where(category: Category.where(name: category)).count})", items_path(sort: params[:sort], query: params[:query], filter: category,), class: "btn btn-category #{"active" if params[:filter] == category }" %>
       <% end %>
     </div>
 
@@ -57,11 +57,13 @@
       <%# // Main body of the cards starts here; only showing the first image %>
         <div class="item-card">
           <%# <img src== item.image_url.first class="card-img-top img-responsive img-fluid" height="250px"> %>
+            <div class="card-top">
             <img src=<%= item.image_url.first %> class="item-image">
             <%# // This is the More section %>
             <div class="item-image-overlay">
               <button type="button" class="button-more" data-toggle="modal" data-target="#<%= dom_id(item) %>">
                 Quick view</button>
+            </div>
             </div>
             <%# // This is the code for the More button popup window %>
             <div class="modal fade" id="<%= dom_id(item) %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -114,7 +116,7 @@
 
         <div class="card-body">
           <h5 class="card-title"><%= item.name.truncate(24) %></h5>
-          <p class="card-price"><%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{'%.2f' % (item.original_price.to_f/100).to_s}" : ""%></s> </p>
+          <h5 class="card-price"><%= "#{item.currency}#{'%.2f' % (item.price.to_f/100).to_s}" %> <s> <%= (item.original_price.to_i)>0 ? "#{item.currency}#{'%.2f' % (item.original_price.to_f/100).to_s}" : ""%> </s> </h5>
           <div class="card-category">
             <i class="fas fa-tags"></i>
             <p><%= item.category.name.capitalize %></p>
@@ -126,25 +128,25 @@
 
           <%# // delete button %>
           <div class="delete-button">
-            <i class="fa fa-trash-alt"></i><%= link_to "Delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "text-delete" %>
+            <%= link_to "", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-alt" %>
             <%# <%= link_to "Delete", item_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-alt" %>
           </div>
           <%# // end of delete button %>
 
           <%# // Change Button %>
           <div class="modify-button">
-            <i class="fas fa-pencil-alt"></i><%= link_to 'Modify', edit_item_path(item), class: "text-modify" %>
+            <%= link_to '', edit_item_path(item), class: "fas fa-pencil-alt" %>
           </div>
-          <%# // End of change button %>
-          <div class="purchase-button">
+          <div class="purchase-confirm">
             <%# <i class="fa fa-shopping-cart"></i> %>
             <% if item.purchased == false || item.purchased == nil %>
-            <i class="fa fa-shopping-cart"></i><%= link_to 'Purchase', purchased_item_path(item), method: :patch, data: { confirm: 'Please confirm your purchase' }, class: "text-purchase" %>
+              <%= link_to 'Buy?', purchased_item_path(item), method: :patch, data: { confirm: 'Confirm your purchase' }, class: "btn btn-buy" %>
             <% else %>
-            <i class="fa fa-shopping-cart"></i><%= link_to 'Unpurchase', unpurchased_item_path(item), method: :patch, data: { confirm: 'Please confirm your unpurchase' }, class: "text-purchase" %>
+              <%= link_to 'Bought', unpurchased_item_path(item), method: :patch, data: { confirm: 'Confirm you have not bought this item' }, class: "btn btn-bought" %>
             <% end %>
-
           </div>
+          <%# // End of change button %>
+          
           <%# // The Buy button starts here %>
           <%# <button type="button" class="btn btn-buy" data-toggle="modal" data-target="#exampleModal2">
             Buy</button>
