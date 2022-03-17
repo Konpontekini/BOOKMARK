@@ -2,7 +2,7 @@
   <%# // Welcome message %>
   <div class="welcome-info">
     <h3>Hello <%= current_user.first_name %> ☺ </h3>
-    <h4>You have <%= pluralize @items_count, 'saved bookmark' %></h4>
+    <h4>You have <%= pluralize @items_count, 'saved Bookmark' %></h4>
   </div>
 </div>
 
@@ -58,13 +58,13 @@
         <div class="item-card">
           <%# <img src== item.image_url.first class="card-img-top img-responsive img-fluid" height="250px"> %>
             <div class="card-top">
-            <img src=<%= item.image_url.first %> class="item-image">
+              <img src=<%= item.image_url.first %> class="item-image">
+              <div class="item-image-overlay">
+                <button type="button" class="button-more" data-toggle="modal" data-target="#<%= dom_id(item) %>">
+                <p>Quick view</p></button>
+              </div>
+            </div>
             <%# // This is the More section %>
-            <div class="item-image-overlay">
-              <button type="button" class="button-more" data-toggle="modal" data-target="#<%= dom_id(item) %>">
-                Quick view</button>
-            </div>
-            </div>
             <%# // This is the code for the More button popup window %>
             <div class="modal fade" id="<%= dom_id(item) %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">

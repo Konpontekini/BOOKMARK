@@ -1,13 +1,14 @@
 <div class="container-edit">
-  <div class="form-item-edit">
+  <div class="form-group-edit">
     <h1>Change Category</h1>
+    <div class="form-item-edit">
       <%# <%= render "form", category: @category, item: @item %>
-    <%= simple_form_for [@category, @item] do |f| %>
-    <%= f.association :category %>
-    <%# <%= f.input :item_url %>
-    <%= f.submit class: 'btn btn-primary', id: 'add-update-item' %>
-    <% end %>
+      <%= simple_form_for [@category, @item] do |f| %>
+      <%= f.association :category %>
+      <%# <%= f.input :item_url %>
+      <%= f.submit 'Update category', class: 'btn btn-primary', id: 'add-update-item' %>
+      <% end %>
   </div>
+  <%= link_to "Back to Bookmarks", items_path, class: "btn btn-ghost-edit" %>
 </div>
-
-<%= link_to "Back to Bookmark list", items_path, class: "btn btn-ghost-edit" %>
+</div>

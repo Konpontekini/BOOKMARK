@@ -1,5 +1,24 @@
+.container-edit {
+  background-color: $light-pink;
+  height: 500px;
+  align-items: center;
+}
+
+.form-group-edit {
+  background-color: $pale-grey;
+  margin-left: 300px;
+  margin-right: 300px;
+  padding-top: 40px;
+  align-items: center;
+  height: 500px;
+  h1 {
+    text-align: center;
+    padding-top: 40px;
+  }
+}
+
 .form-item-edit {
-  width: 600px;
+  width: 400px;
   margin: auto;
-  margin-top: 40px;
+  padding-top: 10px;
 }

@@ -1,21 +1,49 @@
-.form-item-new {
-  width: 600px;
-  margin: auto;
+.container-new {
+  // display: inline-block;
+  // margin-top: 40px;
+  align-items: center;
+  background-color: $pale-grey;
+  height: 500px;
 }
 
-.create-item {
-  background: black;
+.form-group-new {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://res.cloudinary.com/dajifvnn5/image/upload/v1647190785/uby-yanes-mAgNvtRlGzA-unsplash_hh3hgn.jpg");
+  background-size:cover;
+  // object-fit: bottom;
+  margin-left: 300px;
+  margin-right: 300px;
+  padding-top: 10px;
+  align-items: center;
+  height: 500px;
+  h1 {
+    text-align: center;
+    padding-top: 40px;
+  }
+  .form-item-new {
+    width: 400px;
+    margin: auto;
+    padding-top: 10px;
+  }
 }
 
 .form-control.select.required {
   border-radius: 8px;
+  padding-top: 0;
+  color: $charcol;
 }
 
 .form-control.text.required {
   border-radius: 8px;
-
+  padding-top: 0;
+  color: $charcol;
 }
 
-.container-new {
-  margin-top: 40px;
+.select.required {
+  color: $pale-grey;
+  font-size: 20px;
+}
+
+.text.required {
+  color: $pale-grey;
+  font-size: 20px;
 }
