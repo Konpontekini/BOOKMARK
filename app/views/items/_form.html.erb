@@ -1,5 +1,5 @@
 <%= simple_form_for [category, item] do |f| %>
-  <%= f.association :category %>
-  <%= f.input :item_url %>
-  <%= f.submit class: 'btn btn-primary', id: 'add-update-item' %>
+  <%= f.association :category, label: 'Bookmark category', class: 'add-text' %>
+  <%= f.input :item_url, label: 'Bookmark link', class: 'add-text' %>
+  <%= f.submit 'Create bookmark', class: 'btn btn-primary', id: 'add-update-item' %>
 <% end %>

@@ -58,34 +58,48 @@
 }
 
 .item-image-overlay {
-  background-color: white;
+  background-color: $pale-grey;
+  opacity: 0.7;
   // transition: transform 0.3s ease;
   // transform: translateY(100%);
-  margin-top: -33px;
+  margin-top: -47px;
   display: none;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   width: 100%;
   min-width: 40px;
+  text-align: center;
 }
 
 .button-more {
-  padding: 2px 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  // padding: 2px 8px;
   background-color: white;
+  opacity: 1;
   min-width: 40px;
-  color: $charcol;
-  width: 100%;
+  // color: $charcol;
+  width: 80%;
   font-size: 18px;
-  line-height: 28px;
-  border-bottom: solid 1px lightgrey;
-  border-right: none;
-  border-top: none;
-  border-left: none;
+  // line-height: 28px;
+  border: solid 1px $charcol;
+  &:hover {
+    border: solid 1px $dark-pink;
+  }
+  // border-right: none;
+  // border-top: none;
+  // border-left: none;
 
-    &:hover {
+   p {
+     vertical-align: center;
+     margin: 0;
+     color: $charcol;
+     font-weight: bold;
+     &:hover {
       color: $dark-pink;
-      font-weight: bold;
+      // font-weight: bold;
     }
+   }
 }
 
 .delete-button {
@@ -127,6 +141,7 @@
   width: 80px;
   height: 25px;
   background-color: $charcol;
+  font-family: "Cormorant Garamond", "Helvetica", "serif";
   color: $pale-grey;
   text-decoration: none;
   // padding-right: 4px;
@@ -138,6 +153,7 @@
 .btn.btn-bought {
   padding-top: 0;
   font-size: 14px;
+  font-family: "Cormorant Garamond", "Helvetica", "serif";
   width: 80px;
   height: 25px;
   background-color: $charcol;
@@ -148,46 +164,6 @@
     color: $pale-grey;
   }
 }
-
-// .btn.btn-buy {
-//   background-color: $charcol;
-//   color: lightgrey;
-//   width: 100px;
-//   height: 35px;
-//   text-align: center;
-//   font-size: 16px;
-//   margin-left: 10px;
-//   font-weight: bold;
-
-//   &:hover {
-//     color: $dark-pink;
-//   }
-// }
-
-// .btn.btn-confirm-yes {
-//   background-color: $charcol;
-//   color: $pale-grey;
-//   margin-left: 100px;
-//   width: 120px;
-//   font-size: 18px;
-
-//   &:hover {
-//     color: $dark-pink;
-//   }
-// }
-
-// .btn.btn-confirm-no {
-//   background-color: white;
-//   color: $charcol;
-//   border: solid 1px lightgrey;
-//   font-size: 18px;
-//   margin-left: 30px;
-//   width: 120px;
-
-//   &:hover {
-//     border: solid 1px $charcol;
-//   }
-// }
 
 .btn.btn-back {
   background-color: $charcol;
@@ -211,9 +187,10 @@
 
   .btn.btn-primary {
     background-color: $charcol;
+    font-size: 20px;
     border-radius: 4px;
     color: $pale-grey;
-    border: none;
+    border: 1px solid $charcol;
 
     &:hover {
       color: $dark-pink;
@@ -222,18 +199,23 @@
   }
 
   .btn.btn-ghost-new {
-    color: $charcol;
-    margin-left: 400px;
+    color: $pale-grey;
+    margin-left: 120px;
+    padding-top: 40px;
+    font-size: 20px;
     &:hover {
       color: $dark-pink;
+      font-weight: bold;
     }
   }
 
   .btn.btn-ghost-edit {
     color: $charcol;
-    margin-left: 400px;
-    font-size: 16px;
+    margin-left: 120px;
+    padding-top: 40px;
+    font-size: 20px;
     &:hover {
       color: $dark-pink;
+      font-weight: bold;
     }
   }
